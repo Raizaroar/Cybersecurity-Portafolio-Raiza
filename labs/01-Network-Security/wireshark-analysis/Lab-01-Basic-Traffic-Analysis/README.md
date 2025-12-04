@@ -25,17 +25,22 @@ Objectives
 5. Document findings in a professional format
 
 Lab Environment
-System Information
+ System Information
 
 OS: Kali Linux 2024.x
+
 Wireshark Version: 4.x (pre-installed in Kali)
+
 Network Interface: eth0 / wlan0
+
 Capture Duration: 5-10 minutes per scenario
-Tools: Wireshark, tcpdump, tshark
 
 Prerequisites
 
 Kali Linux VM or bare metal installation
+
 Root/sudo privileges
+
 Basic understanding of TCP/IP and Linux CLI
+
 Network connectivity for packet capture
