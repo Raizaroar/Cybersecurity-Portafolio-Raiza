@@ -5,7 +5,9 @@
 
 ## About Me
 
-Cybersecurity Analyst specializing in  **Network Traffic**. This repository showcases practical labs, security tools, and real-world projects developed during my professional transition into cybersecurity.
+I'm an enthusiastic cybersecurity analyst with a unique background in the healthcare sector and solid experience in network traffic analysis. My career began in dentistry, where I developed precision, documentation skills, and a deep commitment to ethical standards—qualities that now reinforce my work in cybersecurity.
+
+This portfolio showcases hands-on labs, security tools, and real-world projects developed during my transition into the cybersecurity field. I specialize in analyzing network behavior, investigating threats using SIEM platforms such as Splunk, and creating scripts in Python, Bash, and PowerShell to automate detection and response.
 
 Skills & Technologies
 
@@ -50,11 +52,11 @@ Security Frameworks | OWASP | MITRE ATT&CK | NIST
 
 ## Certifications
 
-- **[CCST Cybersecurity Mujer Digital - Junior Achievement Mexico City]** - [2025]
-- **[Google Cybersecurity Professional Certificate]** - [2025]
-- **[IBM Cybersecurity Specialist Professional Certificate]** - [2025]
-- **[AWS Certified Cloud Practitioner]** - [2025]
-- **[Git and Github Essential]** - [2025]
+- **CCST Cybersecurity Mujer Digital - Junior Achievement Mexico City** - [2025]
+- **Google Cybersecurity Professional Certificate** - [2025]
+- **IBM Cybersecurity Specialist Professional Certificate** - [2025]
+- **AWS Certified Cloud Practitioner** - [2025]
+- **Git and Github Essential** - [2025]
 
 ## Contact
 
