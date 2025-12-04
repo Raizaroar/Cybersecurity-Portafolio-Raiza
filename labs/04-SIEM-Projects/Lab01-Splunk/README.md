@@ -31,7 +31,7 @@ Events live in **`index="main"`** and are **JSON-formatted**, so I use **`spath`
 **What I’m searching for**  
 Events grouped by `UserName` and `Source_Country`, showing the number of times a user generated traffic from different countries.  
 
-**SPL**
+### SPL 1
 
 ```spl
 index="main" 
@@ -43,8 +43,7 @@ index="main"
 
 ![Análisis de Splunk](../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-01/04-SIEM-Projects-splunk-figure.01.png)
 
-  <em>Figure 1: This screenshot shows a Splunk query grouping events by <strong>UserName</strong> and <strong>Source_Country</strong>, excluding traffic from France. The results highlight geolocation activity, allowing detection of unusual login patterns such as a single user appearing in multiple foreign countries. Useful for identifying account compromise or suspicious travel-related anomalies.</em>
-</p>
+*Figure 1: This screenshot shows a Splunk query grouping events by **UserName** and **Source_Country**, excluding traffic from France. The results highlight geolocation activity, allowing detection of unusual login patterns such as a single user appearing in multiple foreign countries. Useful for identifying account compromise or suspicious travel-related anomalies.*
 
 **Good for**  
 
@@ -67,7 +66,7 @@ index="main"
 **What I’m searching for**  
 Events where `action=failed`, aggregated by user and IP.
 
-**SPL**
+### SPL 2
 
 ```spl
 index="main" action=failed
@@ -78,8 +77,7 @@ index="main" action=failed
 
 ![Análisis de Splunk](../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-01/04-SIEM-Projects-splunk-figure02.png)
 
-  <em>Figure 2: This screenshot displays a Splunk search filtered for events where <strong>action=failed</strong>. Events are aggregated by <strong>UserName</strong> and <strong>Source_ip</strong>, making it possible to identify repeated login failures tied to specific accounts and source IPs. This is a common use case for detecting brute-force attempts or credential stuffing.</em>
-</p>
+*Figure 2: This screenshot shows a Splunk search that has been filtered to display events where action=failed. Events are aggregated by 'UserName' and 'Source_IP', enabling repeated login failures tied to specific accounts and source IPs to be identified. This is a common use case for identifying brute-force attacks or credential stuffing.*
 
 **Good for**  
 
@@ -102,7 +100,7 @@ index="main" action=failed
 **What I’m searching for**  
 Events originating only from the `United States`, grouped by `source_state`.
 
-**SPL**
+### SPL 3
 
 ```spl
 index="main" Source_Country="United States"
@@ -113,8 +111,7 @@ index="main" Source_Country="United States"
 
 ![Análisis de Splunk](../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-01/04-SIEM-Projects-splunk-figure.03.png)
 
-  <em>Figure 3: This screenshot highlights a Splunk query filtered to <strong>Source_Country="United States"</strong>, with results grouped by <strong>source_state</strong>. The output provides insight into geographic distribution of traffic across U.S. states. This is helpful for baseline monitoring and identifying anomalies (e.g., a user accessing from a state that is outside expected regions).</em>
-</p>
+*Figure 3: This screenshot shows a Splunk query filtered by 'Source_Country = United States', with the results grouped by 'Source_State'. The output provides insight into the geographic distribution of traffic across US states. This information is useful for baseline monitoring and for identifying anomalies (e.g. a user accessing the system from a state outside the expected regions).*
 
 **Good for**  
 
@@ -136,7 +133,7 @@ index="main" Source_Country="United States"
 **What I’m searching for**  
 Events where action is `teardown`, using `protocol=tcp`, focusing on `port=443` or any destination port equal to 443.
 
-**SPL**
+### SPL 4
 
 ```spl
 index="main" action=teardown protocol=tcp (port=443 OR dest_port=443)
@@ -147,8 +144,7 @@ index="main" action=teardown protocol=tcp (port=443 OR dest_port=443)
 
 ![Análisis de Splunk](../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-01/04-SIEM-Projects-splunk-figure.04.png)
 
-  <em>Figure 4: This screenshot illustrates a search that filters for <strong>action=teardown</strong> and protocol <strong>tcp</strong> with ports 443 or destination port 443. Grouping by <strong>Source_ip</strong> reveals which IPs are generating SSL/TLS session terminations. This is useful for monitoring secure traffic patterns, diagnosing abnormal HTTPS teardown activity, or spotting potential misuse of encrypted connections.</em>
-</p>
+*Figure 4: This screenshot illustrates a search that filters for 'action=teardown' and the TCP protocol with ports 443 or a destination port of 443. Grouping by Source_IP reveals which IP addresses are generating SSL/TLS session terminations. This information is useful for monitoring secure traffic patterns, diagnosing abnormal HTTPS teardown activity and identifying potential misuse of encrypted connections.*
 
 **Good for**  
 
@@ -170,7 +166,7 @@ index="main" action=teardown protocol=tcp (port=443 OR dest_port=443)
 **What I’m searching for**  
 The distribution of session outcomes (e.g., `teardown`, `accept).
 
-**SPL**
+### SPL 5
 
 ```spl
 index="main"
@@ -181,8 +177,7 @@ index="main"
 
 ![Análisis de Splunk](../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-01/04-SIEM-projects-splunk-figure.05.png)
 
-  <em>Figure 5: This screenshot shows a baseline aggregation query using stats count by <strong>Source_ip</strong>, with results sorted in descending order. It highlights the top IP addresses generating events in the dataset. This is useful for quickly spotting “noisy” IPs, scanning activity, or establishing a baseline of top talkers in the environment.</em>
-</p>
+*Figure 5: This screenshot shows a baseline aggregation query using the 'stats count by Source_ip' function, with the results sorted in descending order. It highlights the IP addresses that generate the most events in the dataset. This is useful for quickly identifying “noisy” IP addresses, scanning activity or determining the most active elements in the environment.*
 
 **Good for**  
 
