@@ -1,8 +1,5 @@
 # Cybersecurity Portfolio
 
-[![GitHub](https://img.shields.io/badge/GitHub-Portfolio-blue?style=for-the-badge&logo=github)](https://github.com/Raizaroar)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)]((https://www.linkedin.com/in/raiza-rosas98))
-
 ## About Me
 
 I'm an enthusiastic cybersecurity analyst with a unique background in the healthcare sector and solid experience in network traffic analysis. My career began in dentistry, where I developed precision, documentation skills, and a deep commitment to ethical standards—qualities that now reinforce my work in cybersecurity.
@@ -63,6 +60,9 @@ Security Frameworks | OWASP | MITRE ATT&CK | NIST
 - **Email:** <raiza.rosas.ag1@outlook.com>
 - **LinkedIn:** [Raiza Rosas](https://www.linkedin.com/in/raiza-rosas98)
 - **GitHub:** [Raizaroar](https://github.com/Raizaroar)
+
+[![GitHub](https://img.shields.io/badge/GitHub-Portfolio-blue?style=for-the-badge&logo=github)](https://github.com/Raizaroar)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)]((https://www.linkedin.com/in/raiza-rosas98))
 
 ---
 
