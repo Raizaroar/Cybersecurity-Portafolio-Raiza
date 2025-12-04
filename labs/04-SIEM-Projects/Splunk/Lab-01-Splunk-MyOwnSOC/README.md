@@ -91,3 +91,15 @@ Platform: Splunk Enterprise / Splunk Free
 Simulated logs: auth.log
 Visualizations: Main dashboard with metrics by user, by IP, failed attempts, suspicious web traffic.
 Alerts: SPL searches that detect anomalous conditions.
+
+![Análisis de Wireshark](../../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-01-MyOwnSOC/Lab-01-MyOwnSOC.png)
+
+## Search Engines examples
+
+Detection of failed access attempts by user:
+
+```Bash
+index=main source="/var/log/auth.log" "Failed password"
+| rex "from (?<src>\d+\.\d+\.\d+\.\d+)"
+| top limit=10 src
+```
