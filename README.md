@@ -1,6 +1,4 @@
-# Cybersecurity-Portafolio-Raiza
-
-## Cybersecurity Portfolio
+# Cybersecurity Portfolio
 
 [![GitHub](https://img.shields.io/badge/GitHub-Portfolio-blue?style=for-the-badge&logo=github)](https://github.com/Raizaroar)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin)]((www.linkedin.com/in/raiza-rosas98))
@@ -56,7 +54,7 @@ Security Frameworks | OWASP | MITRE ATT&CK | NIST
 - **[Google Cybersecurity Professional Certificate]** - [2025]
 - **[IBM Cybersecurity Specialist Professional Certificate]** - [2025]
 - **[AWS Certified Cloud Practitioner]** - [2025]
--**[Git and Github Essential]** - [2025]
+- **[Git and Github Essential]** - [2025]
 
 ## Contact
 
