@@ -196,7 +196,7 @@ index="main"
 ## Summary
 
 - `index` ensures Splunk queries the correct dataset.
-- `spath` parses JSON data into searchable fields.
+- `spath` parses JSON data into searchabVe fields.
 - `stats` performs aggregations to summarize raw data.
 - **Filtering fields** like `UserName`, `Source_ip`, `Source_Country`, and `action` allow analysts to pinpoint anomalies.
 
