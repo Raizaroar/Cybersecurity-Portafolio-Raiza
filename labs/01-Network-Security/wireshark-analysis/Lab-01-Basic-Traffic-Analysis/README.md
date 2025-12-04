@@ -67,9 +67,12 @@ Key Findings:
 Capture Setup
 
 Platform: Kali Linux 2024.x
+
 Tool: Wireshark 4.x / tcpdump / tshark
+
 Interface: eth0 (Ethernet) / wlan0 (Wireless)
-Capture Command:
+
+## Capture Command
 
 ```bash
 sudo tcpdump -i eth0 -w http-traffic-analysis.pcap
@@ -82,10 +85,15 @@ Location: captures/http-traffic-analysis.pcap
 ## Analysis Approach
 
 Initial packet review using Wireshark GUI
+
 CLI analysis with tshark for automation
+
 Protocol-specific filtering (HTTP, DNS, TCP)
+
 Stream following for context
+
 Statistical analysis with capinfos
+
 Security assessment
 
 ## Traffic Analysis Results
