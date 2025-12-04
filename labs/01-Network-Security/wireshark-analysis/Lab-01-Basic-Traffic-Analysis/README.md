@@ -51,7 +51,7 @@ Network connectivity for packet capture
 Analyst: Raiza Rosas Aguilar
 Date: 15-11-25
 Duration: 10 minutes
-Total Packets: [número]
+Total Packets: [1967]
 
 ## Executive Summary
 

@@ -36,7 +36,16 @@ Splunk Enterprise (trial)
 
 Network Interface: eth0 / wlan0
 
-## Technical Enhancements
+## SOC in Splunk
+
+Analyst: Raiza Rosas Aguilar
+Date: 30-11-25
+Duration: 2 hours
+Logs Analysis: successful
+
+## Executive Summary
+
+The primary objective is to detect and visualize failed login attempts, correlating events by IP address and user identity to highlight suspicious behavior such as brute-force attempts or unauthorized access. Splunk’s SPL queries and dashboards provide actionable insights, while alert configurations simulate incident response processes.
 
 ### Log Enrichment
 
