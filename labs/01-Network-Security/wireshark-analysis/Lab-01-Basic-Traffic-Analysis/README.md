@@ -24,7 +24,8 @@ Objectives
 4. Extract relevant information from packet captures
 5. Document findings in a professional format
 
-Lab Environment
+- **Lab Environment**
+
  System Information
 
 OS: Kali Linux 2024.x
@@ -35,7 +36,7 @@ Network Interface: eth0 / wlan0
 
 Capture Duration: 5-10 minutes per scenario
 
-Prerequisites
+-**Prerequisites**
 
 Kali Linux VM or bare metal installation
 
