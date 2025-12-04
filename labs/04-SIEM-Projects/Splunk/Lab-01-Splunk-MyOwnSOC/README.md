@@ -1,4 +1,4 @@
-# Mini SOC in Splunk – Detection & Response Lab
+# SOC in Splunk 
 
 ## Project Overview
 
