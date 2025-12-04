@@ -22,8 +22,8 @@ Security Frameworks | OWASP | MITRE ATT&CK | NIST
 | Directory | Description | Key Technologies |
 |-----------|-------------|------------------|
 | [01-Network-Security](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/01-Network-Security) | Network scanning, packet analysis | Nmap, Wireshark |
-| [02-Web-Application-Security](https://github.com/Raizaoar/Cybersecurity-Portafolio-Raiza/tree/main/Labs/02-Web-Application-Security) | Web vulnerabilities testing | Burp Suite, OWASP ZAP |
-| [03-Penetration-Testing](https://github.com/Raizaoar/Cybersecurity-Portafolio-Raiza/tree/main/Labs/03-Penetration-Testing) | Exploitation frameworks & custom tools | Metasploit, Python |
+| [02-Web-Application-Security](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/02-Web-Application-Security) | Web vulnerabilities testing | Burp Suite, OWASP ZAP |
+| [03-Penetration-Testing](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/03-Penetration-Testing) | Exploitation frameworks & custom tools | Metasploit, Python |
 | [04-SIEM-Projects](https://github.com/Raizaoar/Cybersecurity-Portafolio-Raiza/tree/main/Labs/04-SIEM-Projects) | Security monitoring & log analysis | Splunk, ELK |
 | [05-Forensics](https://github.com/Raizaoar/Cybersecurity-Portafolio-Raiza/tree/main/Labs/05-Forensics) | Digital forensics investigations | Volatility, Autopsy |
 | [06-Automation-Scripts](https://github.com/Raizaoar/Cybersecurity-Portafolio-Raiza/tree/main/Labs/06-Automation-Scripts) | Security automation tools | Python, Bash |
