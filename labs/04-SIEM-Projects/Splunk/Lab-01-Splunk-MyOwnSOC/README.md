@@ -1,4 +1,4 @@
-# SOC in Splunk 
+# SOC in Splunk
 
 ## Project Overview
 
@@ -10,11 +10,10 @@ Difficulty: Entry Level
 
 Platform: Kali Linux 2025.2-virtualbox-amd64
 
-## Tools Used:
+## Tools Used
 
 Platform: Splunk Enterprise / Splunk Free
 Simulated logs: auth.log
-
 
 ## Objective
 
@@ -36,7 +35,7 @@ Splunk Enterprise (trial)
 
 Network Interface: eth0 / wlan0
 
-## SOC in Splunk
+## Lab Details
 
 Analyst: Raiza Rosas Aguilar
 Date: 30-11-25
