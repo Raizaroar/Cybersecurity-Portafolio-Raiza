@@ -41,7 +41,7 @@ index="main"
 | sort - count
 ```
 
-![Análisis de Splunk](../../../../assets\screenshots\04-SIEM-Projects\04-SIEM-Projects-splunk-figure02.png)
+C:\Users\raiza\OneDrive\Escritorio\Cybersecurity\Cybersecurity-Portafolio-Raiza\assets\screenshots\04-SIEM-Projects\04-SIEM-Projects-splunk-figure.01.png
 
   <em>Figure 1: This screenshot shows a Splunk query grouping events by <strong>UserName</strong> and <strong>Source_Country</strong>, excluding traffic from France. The results highlight geolocation activity, allowing detection of unusual login patterns such as a single user appearing in multiple foreign countries. Useful for identifying account compromise or suspicious travel-related anomalies.</em>
 </p>
