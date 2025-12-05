@@ -192,9 +192,13 @@ I created 4 panels
 4. Heat map : ``| iplocation src_ip | geostats count``
 
 ## Comandos y Herramientas Usadas
-|  Herramienta   |         propósito    |             Comando clave                          |
+|  **Tool**      |        **Use**       |              **Main key**                          |
 |----------------|----------------------|----------------------------------------------------|
-|      Hydra     | Simulación de ataque |hydra -L users.txt -P passwords.txt ssh://IPSplunk ForwarderRecolección de logssplunk add monitor /var/log/auth.logSPLAnálisis de datosrex, stats, timechart
+|      Hydra     | Simulación de ataque |```hydra -L users.txt -P passwords.txt ssh://IP```  |
+|Splunk Forwarder| Recolección de logs  | ```splunk add monitor /var/log/auth.log```         |
+|       SPL      | Análisis de datos    |  ```rex```, ```stats```, ```timechart```           |
+
+
 
 
 
