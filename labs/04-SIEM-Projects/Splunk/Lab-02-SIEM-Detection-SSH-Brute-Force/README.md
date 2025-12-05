@@ -72,16 +72,37 @@ sudo systemctl status ssh
 
 
  Verifica que SSH esté corriendo
+
+ ```
 sudo systemctl status ssh
+```
 
+## poner ss aqui
 
+Why these commands?
 
+I need an active SSH service to attack in a controlled manner
 
+```systemctl enable``` ensures that SSH starts automatically
 
+**Step 2: Installing Splunk Universal Forwarder on the Victim**
 
+Download forwarder 
+```
+wget -O splunkforwarder.tgz 'https://download.splunk.com/products/universalforwarder/releases/9.1.0/linux/splunkforwarder-9.1.0-linux-2.6-amd64.deb'
+```
 
+Install
+```
+sudo dpkg -i splunkforwarder-9.1.0-linux-2.6-amd64.deb
+```
 
+Configura para monitorear logs de autenticación
+sudo /opt/splunkforwarder/bin/splunk start --accept-license
+sudo /opt/splunkforwarder/bin/splunk add forward-server [IP_DE_TU_SPLUNK]:9997
+sudo /opt/splunkforwarder/bin/splunk add monitor /var/log/auth.log -index main
 
+## poner sss aqui
 
 
 
