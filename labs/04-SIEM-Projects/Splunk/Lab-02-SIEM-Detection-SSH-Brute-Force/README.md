@@ -416,12 +416,7 @@ Detailed security analysis:
 
 **Step 5: Creating the Dashboard**
 
-I created 4 panels
-
-1. Table of suspicious IPs (Query 1)
-2. Timeline graph (Query 2)
-3. Top users attacked (Query 3)
-4. Heat map : ``| iplocation src_ip | geostats count``
+![sshdetection](../../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-02-SIEM-SSH-Detection/Lab-02-SIEM-SHH-Detection16.png)
 
 ## Comandos y Herramientas Usadas
 |        **Tool**      |        **Use**       |              **Main key**                          |
