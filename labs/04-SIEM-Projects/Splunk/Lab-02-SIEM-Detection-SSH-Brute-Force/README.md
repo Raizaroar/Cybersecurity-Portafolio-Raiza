@@ -65,7 +65,7 @@ ssh ...@192.168.100.x
 ip addr show | grep "inet " | grep -v 127.0.0.1 
 ```
 
-[sshdetection](../../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-02-SIEM-SSH-Detection/Lab-02-SIEM-SHH-Detection1.png)
+![sshdetection](../../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-02-SIEM-SSH-Detection/Lab-02-SIEM-SHH-Detection1.png)
 
 **checked status my splunk**
 
@@ -73,7 +73,7 @@ ip addr show | grep "inet " | grep -v 127.0.0.1
 sudo /opt/splunk/bin/splunk start
 ```
 
-[sshdetection](../../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-02-SIEM-SSH-Detection/Lab-02-SIEM-SHH-Detection2.png)
+![sshdetection](../../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-02-SIEM-SSH-Detection/Lab-02-SIEM-SHH-Detection2.png)
 
 *this found the http://---:8000*
 
@@ -86,6 +86,10 @@ sudo netstat -tlnp | grep 9997
 
 ```docker --version```
 Docker version 27.5.1+dfsg4, build .....
+
+![sshdetection](../../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-02-SIEM-SSH-Detection/Lab-02-SIEM-SHH-Detection4.png)
+
+*hostname@localhost*
 
 **Step 1** 
 
@@ -140,6 +144,8 @@ sudo /opt/splunkforwarder/bin/splunk start --accept-license
 sudo /opt/splunkforwarder/bin/splunk add forward-server [IP_DE_TU_SPLUNK]:9997
 sudo /opt/splunkforwarder/bin/splunk add monitor /var/log/auth.log -index main
 ```
+
+![sshdetection](../../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-02-SIEM-SSH-Detection/Lab-02-SIEM-SHH-Detection3.png)
 
 ## poner sss aqui
 
