@@ -115,8 +115,6 @@ I verified SSH it's right
 sudo systemctl status ssh
 ```
 
-## poner ss aqui
-
 ***Why these commands?***
 
 I need an active SSH service to attack in a controlled manner
@@ -147,7 +145,6 @@ sudo /opt/splunkforwarder/bin/splunk add monitor /var/log/auth.log -index main
 
 ![sshdetection](../../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-02-SIEM-SSH-Detection/Lab-02-SIEM-SHH-Detection3.png)
 
-## poner sss aqui
 
 ***Why this path?***
 
@@ -172,14 +169,12 @@ I created a file of common passwords.
 ```bash
 echo -e "password\n123456\nadmin\nletmein" > passwords.txt
 ```
-
+![sshdetection](../../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-02-SIEM-SSH-Detection/Lab-02-SIEM-SHH-Detection9.png)
 Set up Hydra
 
 ```bash
 hydra -L users.txt -P passwords.txt ssh://[IP_VICTIMA] -t 4 -V
 ```
-
-## poner SS aqui
 
 ***Create failed SSH attempts***
 
@@ -214,6 +209,10 @@ Failed attempts will be recorded in ```/var/log/auth.log```
 Splunk Forwarder will send those logs to your Splunk server. ```192.168.100.x:9997```
 
 I can view events in my Splunk instance.
+
+```spl
+index=main sourcetype=linux_secure
+```
 
 ![sshdetection](../../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-02-SIEM-SSH-Detection/Lab-02-SIEM-SHH-Detection8.png)
 
