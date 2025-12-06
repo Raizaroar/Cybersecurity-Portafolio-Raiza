@@ -24,7 +24,7 @@ Platform: Kali Linux, Ubuntu
 
 Kali Linux 2025.2-virtualbox-amd64
 
-Ubuntu AMD 24.04.3 TLS
+Docker
 
 Network Interface: eth0 / wlan0
 
@@ -51,13 +51,43 @@ This project simulates SSH brute force attacks and configures Splunk to detect t
 
 -**Methodology**
 
-Machine used: Kali Linux (attacker) + Ubuntu machine (simulated victim)
+Machine used: Kali Linux (attacker) + Docker ubuntu(simulated victim)
+
+***conected SSH**
+
+```bash
+ssh ...@192.168.100.x
+```
+
+***configure my splunk**
+
+```bash
+ip addr show | grep "inet " | grep -v 127.0.0.1 
+```
+
+**checked status my splunk**
+
+```bash
+sudo /opt/splunk/bin/splunk start
+```
+
+*this found the http://---:8000*
+
+**checked if splunk listening**
+
+```bash
+sudo netstat -tlnp | grep 9997
+```
+**created docker**
+
+```docker --version```
+Docker version 27.5.1+dfsg4, build .....
 
 **Step 1** 
 
 In the victim environment, I place this script.
 
-```
+```bash
 sudo apt update
 sudo apt install openssh-server -y
 sudo systemctl start ssh
@@ -66,14 +96,14 @@ sudo systemctl enable ssh
 
 I checked SSH is running
 
-```
+```bash
 sudo systemctl status ssh
 ```
 
 
 I verified SSH it's right
 
- ```
+ ```bash
 sudo systemctl status ssh
 ```
 
@@ -88,18 +118,20 @@ I need an active SSH service to attack in a controlled manner
 **Step 2: Installing Splunk Universal Forwarder on the Victim**
 
 Download forwarder 
-```
+
+```bash
 wget -O splunkforwarder.tgz 'https://download.splunk.com/products/universalforwarder/releases/9.1.0/linux/splunkforwarder-9.1.0-linux-2.6-amd64.deb'
 ```
 
 Installed
-```
+
+```bash
 sudo dpkg -i splunkforwarder-9.1.0-linux-2.6-amd64.deb
 ```
 
 Configured to monitor authentication logs
 
-```
+```bash
 sudo /opt/splunkforwarder/bin/splunk start --accept-license
 sudo /opt/splunkforwarder/bin/splunk add forward-server [IP_DE_TU_SPLUNK]:9997
 sudo /opt/splunkforwarder/bin/splunk add monitor /var/log/auth.log -index main
@@ -121,21 +153,22 @@ From Kali Linux
 
 I created a field of common users
 
-```
+```bash
 echo -e "root\nadmin\nuser\ntestuser" > users.txt
 ```
 
 I created a file of common passwords.
 
-```
+```bash
 echo -e "password\n123456\nadmin\nletmein" > passwords.txt
 ```
 
 Set up Hydra
 
-```
+```bash
 hydra -L users.txt -P passwords.txt ssh://[IP_VICTIMA] -t 4 -V
 ```
+
 ## poner SS aqui
 
 ***Why Hydra?***
@@ -192,14 +225,28 @@ I created 4 panels
 4. Heat map : ``| iplocation src_ip | geostats count``
 
 ## Comandos y Herramientas Usadas
-|  **Tool**      |        **Use**       |              **Main key**                          |
-|----------------|----------------------|----------------------------------------------------|
-|      Hydra     | Simulación de ataque |```hydra -L users.txt -P passwords.txt ssh://IP```  |
-|Splunk Forwarder| Recolección de logs  | ```splunk add monitor /var/log/auth.log```         |
-|       SPL      | Análisis de datos    |  ```rex```, ```stats```, ```timechart```           |
+|        **Tool**      |        **Use**       |              **Main key**                          |
+|----------------------|----------------------|----------------------------------------------------|
+|      Hydra           | Simulación de ataque |```hydra -L users.txt -P passwords.txt ssh://IP```  |
+|Splunk Forwarder      | Recolección de logs  | ```splunk add monitor /var/log/auth.log```         |
+|       SPL            | Análisis de datos    |  ```rex```, ```stats```, ```timechart```           |
 
+***Why This Approach?***
 
+   - SSH is universal: All Linux servers use it.
+   - Visible in logs: Easy to detect without complex tools.
+   - Real relevance: 80% of breaches start with weak credentials.
 
+***Purpose of the Lab***
 
+-Demonstrate the ability to:
 
-## Summary 
+1. Configure monitoring systems (SIEM).
+2. Simulate controlled attacks (red team thinking).
+3. Create actionable visualizations for SOC
+4. Understand Linux logs at a granular level
+
+## Conclusion
+
+This lab demonstrates competence in detecting basic but critical threats. Recruiters are looking for candidates who understand the entire cycle: attack → detection → response. The dashboard you create is a tangible piece that you can show in interviews. Upload screenshots of the dashboard, SPL code, and Hydra logs to your GitHub with clear documentation.
+ 
