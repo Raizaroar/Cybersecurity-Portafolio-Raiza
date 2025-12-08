@@ -183,7 +183,7 @@ We convert it into a .txt file for analysis.
 
 ![Análisis de Wireshark](../../../../assets/screenshots/network-security/wireshark/lab-01/lab-01-Wireshark-Anaysis9.png)
 
-Por ultimo, revisamos nuestros archivos .txt para observar su contenido de logs
+Finally, we review our .txt files to observe their log content.
 ![Análisis de Wireshark](../../../../assets/screenshots/network-security/wireshark/lab-01/lab-01-Wireshark-Anaysis10.png)
 
 ## Summary
