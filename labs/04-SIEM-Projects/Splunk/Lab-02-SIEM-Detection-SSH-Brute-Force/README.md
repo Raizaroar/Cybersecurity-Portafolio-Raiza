@@ -49,6 +49,16 @@ Total Logs: [110]
 
 This project simulates SSH brute force attacks and configures Splunk to detect them automatically. I implement alerts based on thresholds for failed attempts and create visualizations that allow a SOC team to identify attack patterns. The result is a functional dashboard that displays attacking IPs, frequency of attempts, and attack timelines.
 
+***Purpose of the Lab***
+
+-Demonstrate the ability to:
+
+1. Configure monitoring systems (SIEM).
+2. Simulate controlled attacks (red team thinking).
+3. Create actionable visualizations for SOC
+4. Understand Linux logs at a granular level
+
+
 -**Methodology**
 
 Machine used: Kali Linux (attacker) + Docker ubuntu(simulated victim)
@@ -420,7 +430,7 @@ Detailed security analysis:
 
 ![sshdetection](../../../../assets/screenshots/04-SIEM-Projects/Splunk/Lab-02-SIEM-SSH-Detection/Lab-02-SIEM-SHH-Detection16.png)
 
-## Comandos y Herramientas Usadas
+## Command and tools used
 |        **Tool**      |        **Use**       |              **Main key**                          |
 |----------------------|----------------------|----------------------------------------------------|
 |      Hydra           | Simulación de ataque |```hydra -L users.txt -P passwords.txt ssh://IP```  |
@@ -433,16 +443,7 @@ Detailed security analysis:
    - Visible in logs: Easy to detect without complex tools.
    - Real relevance: 80% of breaches start with weak credentials.
 
-***Purpose of the Lab***
-
--Demonstrate the ability to:
-
-1. Configure monitoring systems (SIEM).
-2. Simulate controlled attacks (red team thinking).
-3. Create actionable visualizations for SOC
-4. Understand Linux logs at a granular level
-
 ## Conclusion
 
-This lab demonstrates competence in detecting basic but critical threats. Recruiters are looking for candidates who understand the entire cycle: attack → detection → response. The dashboard you create is a tangible piece that you can show in interviews. Upload screenshots of the dashboard, SPL code, and Hydra logs to your GitHub with clear documentation.
+This lab demonstrates competence in detecting basic but critical threats.
  
