@@ -633,7 +633,7 @@ patterns by grouping events from the same source targeting the same account.
 
 ![Serviceno1](../../../../assets/screenshots/04-SIEM-Projects/Service-Now/Lab01-ServiceNow-detectionFail-attempts/Lab01-ServiceNow-detectionFail-attempts16.png)
 
-**PASO 4.3: Visualización de Timeline**
+**step 4.3: Timeline visualization**
 
 Set this query
 
@@ -674,6 +674,7 @@ index=main sourcetype=linux_secure user=testuser earliest=-1h
 ```
 
  **BREAKDOWN**
+
 ```| stats count by src_ip, action```  Multiple fields in Group by COMBINATION of src_ip AND action, Produces separate rows for each unique combination
 
 ```| sort - count``` It sorts the results and In real environments with multiple IPs, this prioritizes the most suspicious ones.
@@ -681,7 +682,21 @@ index=main sourcetype=linux_secure user=testuser earliest=-1h
 ![Serviceno1](../../../../assets/screenshots/04-SIEM-Projects/Service-Now/Lab01-ServiceNow-detectionFail-attempts/Lab01-ServiceNow-detectionFail-attempts18.png)
 
 
+**Note on geolocation:**
 
+In this lab, source IP is localhost (127.0.0.1) for safety. In production 
+environments, I would use Splunk's `iplocation` command to:
+- Identify geographic origin of attacks
+- Detect anomalous login locations (user in USA suddenly logging from Russia)
+- Implement geo-fencing policies
+
+ **STEP 4.6: Create a Reusable Detection Query.**
+
+***Why a “reusable” query?***
+
+  - In real SOC, you do NOT rewrite queries from scratch every time.
+  - You create detection “playbooks.”
+  - This query becomes an alert rule.
 
 
 
