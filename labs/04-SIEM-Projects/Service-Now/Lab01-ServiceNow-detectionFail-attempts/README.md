@@ -698,6 +698,115 @@ environments, I would use Splunk's `iplocation` command to:
   - You create detection “playbooks.”
   - This query becomes an alert rule.
 
+```spl
+index=main sourcetype=linux_secure testuser earliest=-7d
+| rex field=_raw "from\s+(?<src_ip>\d+\.\d+\.\d+\.\d+)"
+| eval event_type=case(
+    searchmatch("Failed password"), "failed",
+    searchmatch("Accepted password"), "accepted",
+    1=1, "other"
+  )
+| search event_type="failed"
+| bucket _time span=5m
+| stats count as failed_attempts by _time, src_ip
+| where failed_attempts >= 1
+| eval severity=case(
+    failed_attempts >= 10, "CRITICAL",
+    failed_attempts >= 5, "HIGH",
+    failed_attempts >= 1, "MEDIUM"
+  )
+| table _time, src_ip, failed_attempts, severity
+| sort - failed_attempts
+```
+
+
+![Serviceno1](../../../../assets/screenshots/04-SIEM-Projects/Service-Now/Lab01-ServiceNow-detectionFail-attempts/Lab01-ServiceNow-detectionFail-attempts19.png)
+
+**FULL BREAKDOWN - PROFESSIONAL QUERY**
+
+**Part 1: Base search**
+
+```splindex=main sourcetype=linux_secure “Failed password”```
+
+Free text search: “Failed password”
+
+- Searches for that exact phrase in events
+- More specific than filtering by action=failed
+- Captures only failed authentication attempts
+
+
+**Part 2: bucket**
+
+```| bucket _time span=1m```
+
+***What does bucket do?***
+
+It groups timestamps into time “buckets.” and Similar to timechart but without creating a graph.
+
+***Why span=1m (1 minute)?***
+
+1-minute windows are sufficient to detect bursts and Balance between granularity and noise with Brute force attacks typically generate multiple attempts per minute.
+
+**Part 3: Stats with aliases**
+
+```| stats count as failed_attempts by _time, user, src_ip```
+
+as failed_attempts:
+
+- Renames the count field to failed_attempts because Descriptive names improve readability and In reports, “failed_attempts” is much clearer than “count”
+
+***Group by 3 fields***
+
+- ```_time``` Time window (thanks to bucket)
+- ```user``` Target account
+ - ```src_ip``` Source of the attack
+
+Result: One row for each comb
+
+**Part 4: Filter with threshold**
+
+```| where failed_attempts >= 3```
+
+Adjustable threshold and This is your “cut-off point” for alerts
+
+***Why 3?***
+
+- 1-2 attempts: Common, may be human error
+- 3+: Unusual, warrants investigation
+
+Reduces false positives
+
+
+**Part 5: eval with case**
+
+```| eval severity=case(
+    failed_attempts >= 10, “CRITICAL”,
+    failed_attempts >= 5, “HIGH”,
+    failed_attempts >= 3, “MEDIUM”
+  )
+```
+
+***What does ```eval``` do?*** - Creates or modifies fields and  ```Eval```  = Evaluate expression
+
+***What does ```case``` do?*** - Conditional structure (similar to if-else or switch) and Evaluates conditions in order or  Returns the value of the first true condition
+
+***Severity logic:***
+
+```
+IF failed_attempts >= 10 → “CRITICAL”
+IF NOT, IF failed_attempts >= 5 → “HIGH”
+IF NOT, IF failed_attempts >= 3 → “MEDIUM”
+```
+
+| Severity Level | Attempts Detected | Description                                |
+|----------------|-------------------|--------------------------------------------|
+| MEDIUM         | 3–4 attempts      | Initial detection, monitoring phase         |
+| HIGH           | 5–9 attempts      | Active attack, incident response initiated  |
+| CRITICAL       | 10+ attempts      | Aggressive attack, immediate escalation     |
+
+This classification allows SOC to prioritize response efforts efficiently.
+
+
 
 
 
