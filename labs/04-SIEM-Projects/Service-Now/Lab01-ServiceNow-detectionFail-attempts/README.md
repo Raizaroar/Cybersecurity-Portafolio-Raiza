@@ -535,6 +535,7 @@ index=main sourcetype=linux_secure user=testuser earliest=-1h
 ```
 
  **DETAILED BREAKDOWN** 
+
  ```Transaction``` It groups related events into a single “session.” and Useful for tracking a complete sequence of actions
 
 Syntax:
@@ -806,10 +807,61 @@ IF NOT, IF failed_attempts >= 3 → “MEDIUM”
 
 This classification allows SOC to prioritize response efforts efficiently.
 
+**Part 6: Final formatting**
+
+```| table _time, src_ip, user, failed_attempts, severity
+| sort - failed_attempts```
+```
+
+Table with key fields:
+
+ - Strategic order: time → source → target → metric → severity
+ - Facilitates quick reading by analysts
+
+Descending sort: Most severe attacks (most attempts) appear first and Automatic prioritization
+
+### Detection Query - Production Ready
+
+**Use case:** Real-time detection of SSH brute force attempts
+
+**Query logic:**
+
+1. Search for failed SSH authentication events
+2. Group by 1-minute time windows
+3. Count failures per (source IP + target user + time window)
+4. Filter for 3+ attempts (tunable threshold)
+5. Classify severity based on attempt count
+6. Present results sorted by severity
+
+**Tunable parameters:**
+
+- ```span=1m```: Adjust time window (larger = fewer alerts, smaller = more sensitive)
+- ```failed_attempts >= 3```: Adjust threshold (lower = more false positives)
+- Severity thresholds: Customize based on organization risk tolerance
+
+**Deployment:**
+This query can be:
+- Saved as a scheduled alert (run every 5 minutes)
+- Integrated with SOAR platform for automated response
+- Used in SOC dashboard for real-time monitoring
+
+**STEP 4.7: Create Automated Alert in Splunk**
+
+ ***Why create alerts?***
+
+- Analysts cannot watch screens 24/7
+- Automated alerts = Proactive detection
 
 
+![Serviceno1](../../../../assets/screenshots/04-SIEM-Projects/Service-Now/Lab01-ServiceNow-detectionFail-attempts/Lab01-ServiceNow-detectionFail-attempts20.png)
 
-
+| Setting             | Option        | Behavior / Description                                                                 | Pros                        | Cons                          | Notes                                                                 |
+|---------------------|---------------|----------------------------------------------------------------------------------------|-----------------------------|-------------------------------|----------------------------------------------------------------------|
+| **Alert type**      | Real-time     | Continuously monitors and alerts immediately when a pattern is detected                 | Instant detection           | Consumes more resources       | For lab: overkill but educational                                    |
+|                     | Scheduled     | Runs at intervals (e.g., every 5 minutes)                                               | Less system load            | Delay of up to 5 minutes      | For production: scheduled every 5 minutes is standard                |
+| **Trigger condition** | Per-Result   | Generates an alert for EACH row of results (e.g., 3 rows → 3 alerts)                    | Granular detection          | Can generate many alerts      | Used here because results are already filtered (only serious events) |
+|                     | Custom        | Alert based on custom condition (e.g., “Only if count > 10”)                            | Flexible, tailored alerts   | Requires extra configuration | Not used in this case                                                |
+| **Throttle**        | Suppress alerts | Prevents “alert fatigue” by avoiding duplicate alerts within a set timeframe            | Reduces alert spam          | May delay repeated alerts     | 5 minutes chosen: balances SOC response time vs. spam                |
 
 
 
