@@ -64,4 +64,22 @@ ls -l
 
 ![ServiceNowlab2](../../../../assets/screenshots/04-SIEM-Projects/Service-Now/Lab02-ServiceNow-Suspicious-Traffic-Analysis/Lab02-ServiceNow-Suspicious-Traffic-Analysis.png)
 
+## PHASE 2: TRAFFIC CAPTURE
+
+   - **Step 2.1: Start packet capture**
+
+```bash
+sudo tcpdump -i eth0 -w evidence/network_capture.pcap -c 1000 -v
+```
+
+ Detailed Explanation of Each Parameter in `tcpdump`
+
+| Parameter | Meaning | Why / Notes |
+|-----------|---------|-------------|
+| `sudo` | `tcpdump` requires raw access to the network interface, which only root can provide. | Root privileges are necessary to capture packets directly from the interface. |
+| `-i eth0` | Specifies WHICH interface to listen on. | Not all interfaces are chosen because it would generate too much noise. |
+| `-w evidence/network_capture.pcap` | SAVES the captured packets into a file. | **Why `.pcap`?** It is the standard format understood by all analysis tools.<br>**Why `evidence/`?** For organization and to simulate a real case scenario. |
+| `-c 1000` | Captures ONLY 1000 packets and then stops. | **Why 1000?** It balances having enough data without filling the disk.<br>**Alternative:** `-G 60` would capture for 60 seconds (not recommended here). |
+| `-v` | Verbose mode (shows details on screen while capturing). | Useful for monitoring packet details in real time. |
+
 
