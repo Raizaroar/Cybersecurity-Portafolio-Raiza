@@ -21,7 +21,7 @@ Security Frameworks | OWASP | MITRE ATT&CK | NIST
 | [01-Network-Security](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/01-Network-Security) | Network scanning, packet analysis | Nmap, Wireshark |
 | [02-Web-Application-Security](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/02-Web-Application-Security) | Web vulnerabilities testing | Burp Suite, OWASP ZAP |
 | [03-Penetration-Testing](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/03-Penetration-Testing) | Exploitation frameworks & custom tools | Metasploit, Python |
-| [04-SIEM-Projects](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/04-SIEM-Projects) | Security monitoring & log analysis | Splunk, ELK |
+| [04-SIEM-Projects](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/04-SIEM-Projects) | Security monitoring & log analysis | Splunk, ServiceNow |
 | [05-Forensics](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/05-Forensics) | Digital forensics investigations | Volatility, Autopsy |
 | [06-Automation-Scripts](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/06-Automation-Scripts) | Security automation tools | Python, Bash |
 | [07-Threat-Intelligence](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/07-Threat-Intelligence) | IOC analysis & threat hunting | MISP, OpenCTI |
