@@ -82,4 +82,62 @@ sudo tcpdump -i eth0 -w evidence/network_capture.pcap -c 1000 -v
 | `-c 1000` | Captures ONLY 1000 packets and then stops. | **Why 1000?** It balances having enough data without filling the disk.<br>**Alternative:** `-G 60` would capture for 60 seconds (not recommended here). |
 | `-v` | Verbose mode (shows details on screen while capturing). | Useful for monitoring packet details in real time. |
 
+![ServiceNowlab2](../../../../assets/screenshots/04-SIEM-Projects/Service-Now/Lab02-ServiceNow-Suspicious-Traffic-Analysis/Lab02-ServiceNow-Suspicious-Traffic-Analysis1.png)
+
+
+
+   - **Step 2.2: Generate controlled “suspicious” traffic**
+
+While tcpdump is capturing, open another terminal:
+
+```bash
+for port in 21 22 23 25 80 443 3389 445; do
+  echo "Testing port $port..."
+  timeout 2 nc -zv 8.8.8.8 $port 2>&1 | tee -a evidence/scan_output.txt
+  sleep 1
+done
+```
+
+**COMPLETE breakdown**
+
+**Line 1**: ```for port in 21 22 23 25 80 443 3389 445; do```
+
+- ***What does it do?*** Loop that iterates over each port number
+- ***Why these ports?***
+  - 21: FTP (File Transfer Protocol) - file transfer
+  - 22: SSH (Secure Shell) - remote access
+  - 23: Telnet - obsolete and insecure protocol
+  - 25: SMTP (email)
+  - 80: HTTP (unencrypted web)
+  - 443: HTTPS (encrypted web)
+  - 3389: RDP (Remote Desktop Protocol) - Windows
+  - 445: SMB (Server Message Block) - Windows file sharing
+
+These are the ports that an attacker scans first, reconnaissance
+
+**Line 2** ```echo “Testing port $port...”```
+- Displays which port is being tested
+
+- ***Why?*** Visual feedback to confirm that the script is working
+
+**Line 3** ```timeout 2 nc -zv 8.8.8.8 $port 2>&1 | tee -a evidence/scan_output.txt```
+
+***Let's break it down***
+
+- ```timeout 2``` : Kills the command if it takes more than 2 seconds
+  - ***Why?*** Some closed ports can hang the connection
+- ```nc``` netcat, the “Swiss Army knife” of networking
+- ```-z``` Zero I/O mode (only checks, does not send data)
+  - ***Why?*** Faster and less intrusive
+- ```-v``` Verbose (shows results)
+- ```8.8.8.8``` Google's public DNS
+  - ***Why Google?*** It's safe for testing, we're not violating any policies
+  - ***Rejected alternative*** `scanme.nmap.org` (designed for this, but slower)
+- ```$port``` The current loop port
+- ```2>&1``` Redirects errors (stderr) to normal output (stdout)
+  - ***Why?*** netcat prints results to stderr, we want to capture them
+- ```| tee -a evidence/scan_output.txt```
+  - ***What does `tee` do?*** It displays ON SCREEN AND saves to file simultaneously
+  - ```-a``` Append (add to the end, do not overwrite)
+
 
