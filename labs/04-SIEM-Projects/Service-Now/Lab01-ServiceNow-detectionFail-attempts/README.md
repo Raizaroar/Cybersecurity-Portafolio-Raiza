@@ -904,6 +904,147 @@ The incident number INC0010001
 
 ![servicenowLab01](../../../../assets/screenshots/04-SIEM-Projects/Service-Now/Lab01-ServiceNow-detectionFail-attempts/Lab01-ServiceNow-detectionFail-attempts21.png)
 
+**STEP 5.2: Attach Evidence to the Incident**
+
+***Why attach evidence?*** In forensic investigations, evidence is CRITICAL and In Chain of custody you need to prove what you saw and when Audits and compliance require supporting documentation
+
+  - **5.2.1 Export Splunk results**
+
+Go to Splunk and Run the detection query:
+
+```spl
+index=main sourcetype=linux_secure testuser earliest=-7d
+| rex field=_raw "from\s+(?<src_ip>\d+\.\d+\.\d+\.\d+)"
+| eval event_type=case(
+    searchmatch("Failed password"), "failed",
+    searchmatch("Accepted password"), "accepted",
+    1=1, "other"
+  )
+| search event_type="failed"
+| stats count as failed_attempts by src_ip
+| table src_ip, failed_attempts
+```
+
+![servicenowLab01](../../../../assets/screenshots/04-SIEM-Projects/Service-Now/Lab01-ServiceNow-detectionFail-attempts/Lab01-ServiceNow-detectionFail-attempts22.png)
+
+Click on the “Export” button (top right) next Select: “Export Results” → “CSV” and  Save as: splunk_detection_evidence.csv
+
+   -  **5.2.2 Extract raw logs**
+
+In your Kali terminal:
+
+```
+bash
+sudo grep testuser /var/log/auth.log | grep -E “(Failed password|Accepted password)” > ~/Desktop/ssh-bruteforce-lab/auth_log_evidence.txt
+```
+
+**COMMAND BREAKDOWN**
+
+```bash
+sudo grep testuser /var/log/auth.log
+```
+
+Searches for all lines with “testuser”
+
+```bash
+| grep -E “(Failed password|Accepted password)”
+```
+
+   -E: Extended regex (allows | to be used for OR)
+   (Failed password|Accepted password): Searches for lines with either of these phrases
+   Why this filter: We only want authentication events (not other logs)
+
+```bash
+> ~/Desktop/ssh-bruteforce-lab/auth_log_evidence.txt
+```
+
+Save the result to a file
+
+   -  **5.2.3 Create a text file with the summary**
+
+```bash 
+cat > ~/Desktop/ssh-bruteforce-lab/hydra_attack_summary.txt << 'EOF'
+ATTACK TOOL: Hydra v9.x
+COMMAND EXECUTED:
+hydra -l testuser -P passwords.txt ssh://127.0.0.1 -t 4 -V
+
+ATTACK PARAMETERS:
+- Target: 127.0.0.1 (localhost)
+- Protocol: SSH
+- Username: testuser (single target)
+- Dictionary: 7 passwords
+- Threads: 4 (parallel connections)
+- Result: SUCCESS - Password found: SecurePass123!
+
+ATTACK TIMELINE:
+- Start: [Tu timestamp]
+- Duration: ~15 seconds
+- Attempts: 7 (6 failed + 1 success)
+- Success rate: 14.3%
+
+OBSERVED BEHAVIOR:
+- Rapid sequential attempts (automated)
+- Consistent timing between attempts (~2 seconds)
+- Pattern indicative of dictionary-based brute force
+EOF
+```
+
+![servicenow1](../../../../assets/screenshots/04-SIEM-Projects/Service-Now/Lab01-ServiceNow-detectionFail-attempts/Lab01-ServiceNow-detectionFail-attempts24.png)
+
+**Step 5.2.4 Upload files to ServiceNow**
+
+1. In ServiceNow, go to your incident (INC0010XXX)
+
+2.  Scroll down until you find the **“Attachments”** or **“Notes”** section
+
+3. Click on the paperclip icon 📎 or the **“Attach”** button
+
+4. Upload these files:
+   - `splunk_detection_evidence.csv`
+   -`auth_log_evidence.txt`
+   -`hydra_attack_summary.txt`
+   - Screenshots from Splunk (timeline, queries, results)
+
+![servicenow1](../../../../assets/screenshots/04-SIEM-Projects/Service-Now/Lab01-ServiceNow-detectionFail-attempts/Lab01-ServiceNow-detectionFail-attempts25.png)
+
+
+
+**Step 5.2.5:** Add a note/comment
+
+In the **“Work Notes”** or **“Additional Comments”** section, add:
+
+
+**EVIDENCE ATTACHED**
+
+The following digital evidence has been collected and attached to this incident:
+
+1. splunk_detection_evidence.csv
+   - Splunk query results showing failed authentication attempts
+   - Includes source IP and attempt counts
+   
+2. auth_log_evidence.txt
+   - Raw log excerpts from /var/log/auth.log
+   - Timestamps and event details for forensic analysis
+   
+3. hydra_attack_summary.txt
+   - Details of the attack tool and methodology
+   - Command-line parameters used in the attack
+   
+4. Screenshots (Splunk dashboards and queries)
+   - Visual timeline of the attack
+   - Detection query configurations
+
+All evidence collected at [timestamp] by [Your name]
+Chain of custody maintained for audit purposes.
+
+
+
+
+
+
+
+
+
 
 
 
