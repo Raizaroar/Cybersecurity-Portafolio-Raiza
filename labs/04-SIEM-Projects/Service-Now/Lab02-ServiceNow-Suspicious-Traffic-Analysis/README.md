@@ -424,3 +424,23 @@ What does it do? Extracts fields using regular expression
 | `\s+>\s+`               | Spaces + arrow + spaces                       | ` > `   |
 | `(?<dest_ip>...)`       | Destination IP (same format as src_ip)        | `8.8.8.8`|
 | `\.(?<dest_port>\d+)`   | Dot + destination port (1 or more digits)     | `.21`   |
+
+
+   - **Line 3**
+
+```| table _time, src_ip, src_port, dest_ip, dest_port```
+
+What does it do? It displays only these 5 fields in table format.
+
+***Fields***
+
+```_time``` Event timestamp (automatic from Splunk)
+```src_ip``` Source IP that we extracted
+```src_port``` Source port
+```dest_ip``` Destination IP
+```dest_port``` Destination port
+
+
+![ServiceNowlab2](../../../../assets/screenshots/04-SIEM-Projects/Service-Now/Lab02-ServiceNow-Suspicious-Traffic-Analysis/Lab02-ServiceNow-Suspicious-Traffic-Analysis13.png)
+
+
