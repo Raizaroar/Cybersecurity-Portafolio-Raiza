@@ -1,13 +1,28 @@
-# 📦 Assets Directory
+#  Assets Directory
 
-## 📋 Overview
+##  Overview
 
-Centralized repository for all images, diagrams, and visual resources used throughout the Cybersecurity Portfolio.
+This folder serves as a centralized location for storing all visual assets related to my Cybersecurity Portfolio. It includes images, diagrams, screenshots, and other graphical resources used across labs, documentation, and presentations.
 
-<p align="left">
-  <img src="https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/blob/main/assets/banners/nina1236.jpg?raw=true" 
-       alt="SIEM alert" 
-       style="border: 2px solid #444; border-radius: 6px;" 
-       width="600"><br>
-  <em>Figure 1</em>
-</p>
+##  Purpose
+
+Organizing visual content in one place ensures consistency, easy access, and better version control throughout my SOC Analyst learning journey.
+
+## Contents
+
+- `images/` – General illustrations and diagrams
+- `screenshots/` – Captures from labs and tools
+- `.gitkeep` – Keeps empty folders tracked in Git
+- `README.md` – This documentation file
+
+## 🛠️ Usage
+
+All visual assets referenced in markdown files or reports will be stored here. Each file will be named and categorized for clarity and reuse.
+
+> Example: `images/siem_alert.png` – Used in lab02 documentation to illustrate alert correlation.
+
+---
+
+Feel free to explore the contents and follow updates as I progress through my cybersecurity training.
+
+![asset1](../assets/images/banners/asset1.png)
