@@ -6,6 +6,15 @@ I'm an enthusiastic cybersecurity analyst with a unique background in the health
 
 This portfolio showcases hands-on labs, security tools, and real-world projects developed during my transition into the cybersecurity field. I specialize in analyzing network behavior, investigating threats using SIEM platforms such as Splunk, and creating scripts in Python, Bash, and PowerShell to automate detection and response.
 
+30-Day SOC Analyst Intensive Training (ACTIVE)
+
+**Status:** Day 1/30 - In Progress  
+**Start Date:** [16-01-2026]  
+**Goal:** Demonstrate job-ready SOC Analyst capabilities through hands-on labs
+
+**[See My Progress Tracker](./00-SOC-Analyst-30Day-Journey/PROGRESS-TRACKER.md)**
+
+
 Skills & Technologies
 
 ``` Penetration Testing  | Metasploit | Burp Suite | Nmap
