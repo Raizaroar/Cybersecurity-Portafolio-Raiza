@@ -21,7 +21,7 @@
 
 ## 🗓️ Daily Log
 
-### Day 1 - [Fecha]
+### Day 1 - [16-01-2026]
 **Lab:** 1.1.1 - Environment Setup  
 **Status:** ✅ Completed  
 **Time Invested:** [2 hours]  
@@ -98,17 +98,17 @@
 ## 💼 HR-Friendly Highlights
 
 **What makes this training valuable:**
-- ✅ Hands-on, practical labs (not just theory)
+- ✅ Hands-on, practical labs 
 - ✅ Documented evidence of every skill
 - ✅ Industry-standard tools and frameworks
 - ✅ Real-world scenarios and case studies
 - ✅ Professional documentation standards
 
 **Portfolio Structure Benefits:**
-- Organized by cybersecurity domain (easy navigation)
-- Each lab includes executive summaries (HR can understand)
-- Screenshots and evidence included (verifiable work)
-- GitHub activity shows consistent learning (commitment proof)
+- Organized by cybersecurity domain
+- Each lab includes executive summaries
+- Screenshots and evidence included 
+- GitHub activity shows consistent learning
 
 ---
 
