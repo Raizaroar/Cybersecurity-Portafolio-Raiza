@@ -47,7 +47,8 @@
 **Planned Activities:**
 - Analyze failed login attempts (Event ID 4625)
 - Detect brute force patterns
-- Document findings in `04-SIEM-Projects`
+- Document findings in `04-SIEM-Projects` [![Abrir Proyecto](https://img.shields.io/badge/GitHub-Proyecto-blue?logo=github)](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/04-SIEM-Projects/Lab-1.1.2-Windows-Event-Analysis)
+
 
 ---
 
