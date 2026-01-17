@@ -43,13 +43,49 @@
 
 ### Day 2 - [17-01-2026]
 **Lab:** 1.1.2 - Windows Security Event Log Analysis  
-**Status:**  Pending  
+**Status:**  Completed
+**Time Invested:** 2 hours
+
 **Planned Activities:**
 - Analyze failed login attempts (Event ID 4625)
 - Detect brute force patterns
 - Document findings in `04-SIEM-Projects` [![Abrir Proyecto](https://img.shields.io/badge/GitHub-Proyecto-blue?logo=github)](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/04-SIEM-Projects/Lab-1.1.2-Windows-Event-Analysis)
 
+**Key Learnings:**
+- Analyzed Windows Event ID 4625 (Failed Logon) for brute force detection
+- Implemented temporal analysis to detect attack velocity
+- Correlated failed attempts with successful logins (compromise detection)
+- Mapped findings to MITRE ATT&CK T1110.001
+- Created professional incident report with executive summary
 
+**Challenges:**
+
+***Permission and Access Control Issues***
+
+- **Challenge**: Encountered `UnauthorizedAccessException` when attempting to read Windows Security event logs
+
+- **Root Cause**: PowerShell terminal running without elevated privileges
+
+- **Resolution**: Executed VS Code as Administrator to gain necessary permissions for accessing Security event logs
+
+- **Learning**: Understanding Windows security contexts and the importance of proper privilege escalation for security analysis tasks
+
+
+**Skills Developed:**
+- PowerShell log analysis
+- Pattern recognition in security events
+- Incident documentation
+- MITRE ATT&CK framework
+
+
+### Day 3 - [tomorrow]
+**Lab:** 1.1.3 - Network Traffic Analysis with Wireshark  
+**Status:**  Pending
+  
+**Planned Activities:**
+- Capture and analyze network packets
+- Identify suspicious traffic patterns
+- Detect common network attacks (ARP spoofing, port scanning)
 ---
 
 ##  Skills Development Tracker
