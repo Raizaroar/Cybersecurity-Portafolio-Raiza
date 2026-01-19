@@ -181,7 +181,7 @@ PASS cualquiercosa
 
 ![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation12.png)
 
-4. Connect to the backdoor shell (in a NEW Kali terminal):
+4. **Connect to the backdoor shell (in a NEW Kali terminal):**
 
 ```bash
 nc 10.0.2.4 6200
@@ -197,5 +197,60 @@ nc 10.0.2.4 6200
 - ls
    - bin  boot  cdrom  dev  etc  home ...
 
-![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation11.png)
+![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation13.png)
 
+5. **Stop capture in Wireshark and Analyze the captured exploit:**
+
+***Filter to view FTP connection:***
+
+```bash
+tcp.port == 21
+```
+
+![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation14.png)
+
+6. **Follow the TCP stream:**
+
+click right in any packet FTP (port 21) and  **Follow** > **TCP Stream**
+
+![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation15.png)
+
+
+***filter backdoor shell:***
+
+``` bash
+tcp.port == 6200
+```
+
+![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation16.png)
+
+
+## STEP 1.1.3.5: DNS Analyze
+
+1. Kali terminal
+
+- nslookup google.com
+- nslookup github.com
+- nslookup kali.org
+
+![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation17.png)
+
+2. analyze queries:
+
+- Expand a DNS query packet
+- See: Queries > google.com: type A and see Answers (in the response)
+
+![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation18.png)
+
+
+## Conclusion
+
+Successfully established and utilized a professional security lab environment to analyze real network attacks. Demonstrated ability to:
+
+**Configure secure lab environments** (isolated VMs)  
+**Capture attack traffic** (reconnaissance + exploitation)  
+**Analyze packet-level evidence** (Wireshark expertise)  
+**Detect reconnaissance** (port scanning patterns)  
+**Identify exploitation** (backdoor triggers)
+
+**Next Lab 1.1.4 - Malware Detection with VirusTotal**
