@@ -37,7 +37,7 @@ I'm an SOC Analyst investigating an attack on a server. I have:
 | **Nmap** | 7.94+ | Port scanning |
 | **Netcat** | N/A | Shell connection to backdoor |
 
-Objective
+## Objective
 
 -  Install and configure Wireshark on Kali Linux
 -  Capture traffic between attack and victim VMs

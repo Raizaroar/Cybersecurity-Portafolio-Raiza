@@ -4,7 +4,7 @@
 
 - **Target Completion:** pending  
 
-- **Current Status:** Day 2 -  Windows Security Event Log Analysis
+- **Current Status:** Day 4 -  Malware Detection with VirusTotal  
 
 ---
 
@@ -12,10 +12,10 @@
 
 | Week | Focus Area | Labs Completed | Status |
 |------|-----------|----------------|--------|
-| Week 1 | Fundamentals & Reconnaissance | 2/7 | 🔄 In Progress |
-| Week 2 | Threat Detection | 0/7 | ⏳ Pending |
-| Week 3 | Incident Response | 0/7 | ⏳ Pending |
-| Week 4 | Advanced Cases & Portfolio | 0/9 | ⏳ Pending |
+| Week 1 | Fundamentals & Reconnaissance | 4/7 |  In Progress |
+| Week 2 | Threat Detection | 0/7 |  Pending |
+| Week 3 | Incident Response | 0/7 |  Pending |
+| Week 4 | Advanced Cases & Portfolio | 0/9 |  Pending |
 
 **Overall Progress:** 2/30 Labs (0.6%)
 
@@ -81,9 +81,13 @@
 ### Day 3 - 18/01/25
 
 **Lab:** 1.1.3 - Network Traffic Analysis with Wireshark  
+
 **Status:**  Completed 
+
 **Time Invested:** 2 hours
+
 **Environment:** Kali Linux + Metasploitable lab setup
+
 **Location:** `01-Network-Security` [![Abrir Proyecto](https://img.shields.io/badge/GitHub-Proyecto-blue?logo=github)](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/01-Network-Security/wireshark-analysis/Lab-1.1.3-Wireshark-Analysis)
 
 **Planned Activities:**
