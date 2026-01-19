@@ -4,13 +4,22 @@
 
 **Category:** Network Security 
 
-**Difficulty:** Entry Level  
+**Difficulty:** Entry Level - Intermadiate  
 
 **Estimated Time:** 2-3 hours  
 
+**Environment:** Kali Linux + Metasploitable lab setup
+
 ## Executive Summary
 
-Successfully installed and configured Wireshark for network traffic analysis. Performed live packet captures, analyzed multiple protocols (ICMP, DNS, HTTP, TLS), and demonstrated ability to detect malicious network activity including port scanning reconnaissance.
+Successfully configured a professional-grade lab environment and performed network traffic analysis on real attack scenarios. Captured and analyzed:
+
+1. ICMP reconnaissance between VMs
+2. Nmap port scanning activity (~200 packets)
+3. vsftpd 2.3.4 backdoor exploitation (FTP + shell on port 6200)
+
+All activity was captured at the packet level, demonstrating ability to perform network forensics on actual security incidents.
+
 
 ## Objective
 
@@ -59,11 +68,23 @@ Successfully installed and configured Wireshark for network traffic analysis. Pe
 
 ## Key Achievements
 
-- **Packet Capture Proficiency:** Captured and analyzed 1000+ packets across multiple protocols
-- **Filter Mastery:** Created 15+ display filters for traffic isolation
-- **Attack Detection:** Identified port scan patterns using TCP SYN analysis
-- **Protocol Analysis:** Deconstructed DNS, HTTP, and TLS communications
-- **Baseline Establishment:** Documented normal network behavior for anomaly detection
+### Key Findings
+
+**Finding 1: Port Scan Detected**
+
+- **Source:** 192.168.56.101 (Kali Linux)
+- **Target:** 192.168.56.102 (Metasploitable)
+- **Method:** TCP SYN scan (Nmap -F flag)
+- **Ports Scanned:** Top 100 common ports
+- **MITRE ATT&CK:** T1046 - Network Service Scanning
+
+**Finding 2: FTP Backdoor Exploitation**
+
+- **Vulnerability:** vsftpd 2.3.4 smiley face backdoor
+- **Trigger:** USER ending with :)
+- **Backdoor Port:** 6200/TCP
+- **Access Gained:** Root shell
+- **MITRE ATT&CK:** T1190 - Exploit Public-Facing Application
 
 ## Skills Demonstrated
 
@@ -83,6 +104,13 @@ Successfully installed and configured Wireshark for network traffic analysis. Pe
    - OSI model in practice: Packets literally show each layer
    - Encryption is critical: Plaintext traffic exposes everything
 
+**MITRE ATT&CK Mapping:**
+
+- **Tactic:** Initial Access
+- **Technique:** T1190 - Exploit Public-Facing Application
+- **Sub-Technique:** FTP service exploitation
+- **Post-Exploit:** T1059.004 - Unix Shell
+
 ## Security Insights
 
    - Network tells stories: Every attack leaves packet-level evidence
@@ -101,6 +129,7 @@ Successfully installed and configured Wireshark for network traffic analysis. Pe
 ## Conclusion
 
 Successfully completed comprehensive Wireshark training covering installation, configuration, packet capture, protocol analysis, and security-focused traffic investigation. Demonstrated ability to:
+
 - Capture & Analyze: Live traffic across multiple protocols
 - Filter & Isolate: Signal from noise using display filters
 - Detect Threats: Port scanning patterns, anomalous DNS
