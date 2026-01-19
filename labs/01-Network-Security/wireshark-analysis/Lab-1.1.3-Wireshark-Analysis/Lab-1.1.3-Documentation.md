@@ -243,6 +243,32 @@ tcp.port == 6200
 ![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation18.png)
 
 
+## Vulnerabilities Demonstrated
+
+### CVE-2011-2523: vsftpd 2.3.4 Backdoor
+
+**Severity:** CRITICAL (10.0 CVSS)
+
+**Description:**  
+
+vsftpd version 2.3.4 contains a backdoor that opens a shell on port 6200/tcp when a username ending with ":)" is provided.
+
+**Exploitation:**
+
+1. Connect to FTP (port 21)
+2. Send USER with ":)" suffix
+3. Send any PASS
+4. Backdoor listener opens on port 6200
+5. Connect to port 6200 with netcat
+6. Root shell obtained
+
+**Mitigation:**
+
+- Update to vsftpd 2.3.5 or later
+- Implement application-layer firewall rules
+- Monitor for connections to port 6200
+- Detect FTP USER commands ending with ":)"
+
 ## Conclusion
 
 Successfully established and utilized a professional security lab environment to analyze real network attacks. Demonstrated ability to:
