@@ -15,12 +15,12 @@ I'm an SOC Analyst investigating an attack on a server. I have:
 - **Hypervisor:** VirtualBox
 
 - **VM 1 - Kali Linux:**
-  - IP: 192.168.56.101
+  - IP: 10.0.2.5
   - Role: Attacker + Packet Analyzer
   - Wireshark installed
   
 - **VM 2 - Metasploitable 2:**
-  - IP: 192.168.56.102
+  - IP: 10.0.2.4
   - Role: Vulnerable target
   - Services: FTP (vsftpd 2.3.4 with backdoor), SSH, Telnet, HTTP, etc.
 
@@ -47,4 +47,96 @@ I'm an SOC Analyst investigating an attack on a server. I have:
 - Follow TCP streams to reconstruct attacks
 - Export evidence in pcap format
 - Document findings with MITRE ATT&CK mapping
+
+## STEP BY STEP - LABORATORY 1.1.3 
+
+### STEP 1.1.3.1: Verify Wireshark on Kali Linux
+
+- Configure Network between Kali and Metasploitable and Verify current network configuration:
+
+In Kali Linux and Metasploitable
+
+```bash 
+ifconfig
+```
+
+![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation1.png)
+
+### STEP 1.1.3.2: First Capture - ICMP between VMs
+
+- **Ping a Metasploitable**
+
+```bash 
+ping -c 10 192.168.56.102
+```
+
+![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation2.png)
+
+En Wireshark The packages started to appear
+
+![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation3.png)
+
+- **Filter only ICMP**
+
+![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation4.png)
+
+### STEP 1.1.3.3: Advanced Capture - Real Port Scan
+
+- **Attack Metasploitable and capture the attack.**
+
+1. **Prepare capture:**
+
+In Wireshark and Start new capture and Interface: eth0
+
+
+Run Nmap scan from Kali
+
+Port scan básico (top 100 ports)
+
+```bash
+nmap -F 10.0.2.4
+```
+
+![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation5.png)
+
+***-F = Fast scan (100 commons ports)***
+ 
+ Take ~10 sec.
+
+2. **Analyze the captured port scan**
+
+*Filter to view only SYN packets:*
+
+```bash
+tcp.flags.syn == 1 and tcp.flags.ack == 0
+```
+
+
+![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation7.png)
+
+3. **Statistical analysis of the scan:**
+
+**This demonstrates:**
+
+- Kali generated ~200 packets to Metasploitable
+- Typical port scan behavior
+
+
+![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation8.png)
+
+Statistics > Endpoints > TCP tab:
+
+4. **Sort by “Packets”**
+
+![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation9.png)
+
+5. **View scanned ports:**
+
+*Filter to view only SYN packets and ports scans:*
+
+```bash
+tcp.flags.syn == 1 and tcp.flags.ack == 0 and ip.src == 10.0.2.5
+```
+
+![Lab1.1.3-NetworkTraffic](/assets/screenshots/network-security/wireshark/1.1.3-NetworkTraffic-Documentation/1.1.3-NetworkTraffic-Documentation10.png)
 

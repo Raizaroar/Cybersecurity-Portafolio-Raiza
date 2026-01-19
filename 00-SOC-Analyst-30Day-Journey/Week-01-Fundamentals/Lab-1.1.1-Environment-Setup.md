@@ -73,12 +73,6 @@ mkdir -p "00-SOC-Analyst-30Day-Journey/Week-03-Incident-Response"
 mkdir -p "00-SOC-Analyst-30Day-Journey/Week-04-Portfolio-Optimization"
 ```
 
-![Week-01-Fundamentals01](../assets/screenshots/Week-01-Fundamentals/Week-01-Fundamentals01.png)
-
-
-
-
-
 
 **Justification:**
 
@@ -208,6 +202,6 @@ Successfully prepared professional environment for 30-day SOC Analyst intensive 
 **Completed:** 16-01-2026  
 **Time Invested:** 3 hours  
 **Difficulty:** Beginner  
-**Status:** ✅ COMPLETE
+**Status:**  COMPLETE
 
 ---
