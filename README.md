@@ -8,7 +8,7 @@ This portfolio showcases hands-on labs, security tools, and real-world projects 
 
 ## 30-Day SOC Analyst Intensive Training (ACTIVE)
 
-**Status:** Day 4/30 - In Progress  
+**Status:** Day 5/30 - In Progress  
 **Start Date:**  16-01-2026  
 **Goal:** Demonstrate job-ready SOC Analyst capabilities through hands-on labs
 
@@ -18,7 +18,7 @@ This portfolio showcases hands-on labs, security tools, and real-world projects 
 Skills & Technologies
 
 ``` Penetration Testing  | Metasploit | Burp Suite | Nmap
-Security Operations  | SIEM | Splunk | Suricata
+Security Operations  | Wazuh | Splunk | Suricata
 Programming         | Python | Bash | PowerShell
 Security Frameworks | OWASP | MITRE ATT&CK | NIST
 ```
@@ -38,6 +38,13 @@ Security Frameworks | OWASP | MITRE ATT&CK | NIST
 
 ## Featured Projects
 
+### [Detection and correlation of unauthorized access attempts](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/04-SIEM-Projects/Service-Now/Lab01-ServiceNow-detectionFail-attempts)
+
+- Generate controlled SSH attack traffic
+- Create detection queries in Splunk.
+- Document the incident in ServiceNow with evidence.
+- **Tech:** Splunk, ServiceNow
+
 ### [Custom SIEM Dashboard for Threat Detection](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/04-SIEM-Projects/Splunk/Lab-02-SIEM-Detection-SSH-Brute-Force)
 
 - Real-time security monitoring
@@ -52,7 +59,8 @@ Security Frameworks | OWASP | MITRE ATT&CK | NIST
 
 ## Certifications
 
-- **CCST Cybersecurity Mujer Digital - Junior Achievement Mexico City** - [2025]
+- **Cisco Certified Support Technician Networking - Mujer Digital Junior Achievement Mexico City** - [2026]
+- **Cisco Certified Support Technician Cybersecurity - Mujer Digital Junior Achievement Mexico City** - [2025]
 - **Google Cybersecurity Professional Certificate** - [2025]
 - **IBM Cybersecurity Specialist Professional Certificate** - [2025]
 - **AWS Certified Cloud Practitioner** - [2025]
