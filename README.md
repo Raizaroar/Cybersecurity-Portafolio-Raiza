@@ -59,8 +59,8 @@ Security Frameworks | OWASP | MITRE ATT&CK | NIST
 
 ## Certifications
 
-- **Cisco Certified Support Technician Networking - Mujer Digital Junior Achievement Mexico City** - [2026]
-- **Cisco Certified Support Technician Cybersecurity - Mujer Digital Junior Achievement Mexico City** - [2025]
+- **Cisco Certified Support Technician Networking - Mujer Digital Junior Achievement** - [2026]
+- **Cisco Certified Support Technician Cybersecurity - Mujer Digital Junior Achievement** - [2025]
 - **Google Cybersecurity Professional Certificate** - [2025]
 - **IBM Cybersecurity Specialist Professional Certificate** - [2025]
 - **AWS Certified Cloud Practitioner** - [2025]
