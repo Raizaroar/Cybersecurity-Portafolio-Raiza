@@ -12,7 +12,7 @@
 
 | Week | Focus Area | Labs Completed | Status |
 |------|-----------|----------------|--------|
-| Week 1 | Fundamentals & Reconnaissance | 4/7 |  In Progress |
+| Week 1 | Fundamentals & Reconnaissance | 5/7 |  In Progress |
 | Week 2 | Threat Detection | 0/7 |  Pending |
 | Week 3 | Incident Response | 0/7 |  Pending |
 | Week 4 | Advanced Cases & Portfolio | 0/9 |  Pending |
@@ -145,7 +145,7 @@
 
 **Time Invested:** 3 hours 
 
-**Location:**`01-Network-Security` [![Abrir Proyecto](https://img.shields.io/badge/GitHub-Proyecto-blue?logo=github)](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/03-Penetration-Testing/Lab-1.1.4-Malware-Detection#lab-114-malware-detection-with-virustotal-and-hash-analysis)
+**Location:**`03-Penetrarion-Testing` [![Abrir Proyecto](https://img.shields.io/badge/GitHub-Proyecto-blue?logo=github)](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/03-Penetration-Testing/Lab-1.1.4-Malware-Detection#lab-114-malware-detection-with-virustotal-and-hash-analysis)
 
 **Key Learnings:**
 
@@ -220,7 +220,7 @@
 
 ### Day 6 - [Tomorrow]
 **Lab:** 1.1.6 - Web Application Attack Detection  
-**Status:** ⏳ Pending  
+**Status:**  Pending  
 **Planned Activities:**
 - SQL injection detection in logs
 - XSS (Cross-Site Scripting) identification
