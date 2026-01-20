@@ -140,9 +140,12 @@
 ### Day 4 - 19-01-2025
 
 **Lab:** 1.1.4 - Malware Detection with VirusTotal  
+
 **Status:** Completed  
+
 **Time Invested:** 3 hours 
-**Location:** `03-Penetration-Testing/Lab-1.1.4-Malware-Detection/`
+
+**Location:**`01-Network-Security` [![Abrir Proyecto](https://img.shields.io/badge/GitHub-Proyecto-blue?logo=github)](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/tree/main/labs/03-Penetration-Testing/Lab-1.1.4-Malware-Detection#lab-114-malware-detection-with-virustotal-and-hash-analysis)
 
 **Key Learnings:**
 
@@ -155,12 +158,19 @@
 
 **Challenges:**
 
-Challenge 1: API Rate Limiting
+**Challenge 1:** ***API Rate Limiting***
+
 **Issue:** Hit 500 requests/day limit during testing  
 **Root Cause:** Repeated queries while debugging script  
 **Solution:** Implemented 15-second delays between requests  
 **Lesson:** Always respect API limits; implement caching for repeated queries
 
+**Challenge 2:** ***Contradictory Vendor Results***
+
+**Issue:** File flagged by 30 engines, cleared by 40  
+**Root Cause:** Heuristic vs. signature-based detection differences  
+**Solution:** Weighted analysis (trust reputable vendors more)  
+**Lesson:** Detection ratio is a guide, not absolute truth
 
 **Skills Developed:**
 - Cryptographic hashing
@@ -181,7 +191,7 @@ Challenge 1: API Rate Limiting
 |---------------|-------|-------|--------|--------|--------|
 | Log Analysis | 🟡 | ⬜ | ⬜ | ⬜ | ⬜ |
 | Network Traffic Analysis | 🟡 | ⬜ | ⬜ | ⬜ | ⬜ |
-| Malware Analysis | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
+| Malware Analysis | 🟡 | ⬜ | ⬜ | ⬜ | ⬜ |
 | Incident Response | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | Threat Intelligence | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
 | Automation/Scripting | ⬜ | ⬜ | ⬜ | ⬜ | ⬜ |
