@@ -38,3 +38,81 @@ My job:
 - Determine if it is phishing
 - Extract IOCs and recommend actions
 
+## STEP BY STEP - LABORATORY 1.1.5
+
+### STEP 1.1.5.1: Understanding Email Anatomy
+
+Email Structure:
+
+Email = Headers + Body + Attachments (optional)
+
+┌─────────────────────────────────────┐
+│ HEADERS (Metadata)                  │
+│ ├─ From: sender@example.com         │
+│ ├─ To: victim@company.com           │
+│ ├─ Subject: Urgent Action Required  │
+│ ├─ Date: Mon, 20 Jan 2025 10:00:00 │
+│ ├─ Return-Path: (actual sender)    │
+│ ├─ Received: (mail server path)    │
+│ ├─ SPF: Pass/Fail                   │
+│ ├─ DKIM: Pass/Fail                  │
+│ └─ DMARC: Pass/Fail                 │
+├─────────────────────────────────────┤
+│ BODY (Message Content)              │
+│                                     │
+│ Dear Customer,                      │
+│ Your account will be suspended...   │
+│ Click here: [malicious link]       │
+│                                     │
+├─────────────────────────────────────┤
+│ ATTACHMENTS (Optional)              │
+│ └─ invoice.pdf.exe (malware)        │
+└─────────────────────────────────────┘
+
+
+### Key Headers for Security Analysis
+
+| Header             | Purpose                          | Phishing Indicator                          |
+|--------------------|----------------------------------|---------------------------------------------|
+| **From**           | Displayed sender                 | Can be spoofed easily                       |
+| **Return-Path**    | Actual sender email              | Often reveals real attacker                 |
+| **Reply-To**       | Where replies go                 | Different from "From" = suspicious          |
+| **Received**       | Mail server hops                 | Shows email journey, can reveal origin      |
+| **X-Originating-IP**| Sender's IP                     | Geographic location, reputation check       |
+| **SPF**            | Sender Policy Framework          | FAIL = unauthorized sender                  |
+| **DKIM**           | Domain Keys Identified Mail      | FAIL = message tampered/forged              |
+| **DMARC**          | Domain-based Message Auth        | FAIL = domain being spoofed                 |
+
+
+### Email Authentication Protocols
+
+| Protocol | Purpose                                 | Example                                           | Result                                  |
+|----------|------------------------------------------|---------------------------------------------------|------------------------------------------|
+| **SPF**  | Verify sender is authorized to send from domain | `company.com` says "only these IPs can send our emails" |  PASS = legitimate<br> FAIL = spoofed |
+| **DKIM** | Cryptographically sign emails            | Digital signature proves email wasn't tampered    | PASS = authentic<br> FAIL = modified/forged |
+| **DMARC**| Define policy for failed SPF/DKIM        | "If SPF/DKIM fail, reject the email"              |  PASS = authentic<br> FAIL = spoofed |
+
+## STEP 1.1.5.2: Install Email Analysis Tools
+
+**Install Thunderbird (Email Client)** 
+
+***Install Thunderbird***
+
+```bash
+sudo apt update
+sudo apt install thunderbird -y
+
+# Launch
+thunderbird &
+```
+
+**Why Thunderbird?** Open-source, safe and Can open .eml files without account, also shows raw headers easily then No risk of auto-executing macros (unlike Outlook)
+
+**Setup Email Header Analyzer:**
+
+No installation needed, web-based:
+
+- MXToolbox: https://mxtoolbox.com/EmailHeaders.aspx
+- Google Admin Toolbox: https://toolbox.googleapps.com/apps/messageheader/
+- Mail-Tester: https://www.mail-tester.com/
+
