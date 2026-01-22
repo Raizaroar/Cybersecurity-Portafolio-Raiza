@@ -4,20 +4,19 @@
 
 - **Target Completion:** pending  
 
-- **Current Status:** Day 5 - Phishing Email Analysis and Detection
-
+- **Current Status:** Day 6 - Web Application Attack Detection  
 ---
 
 ##  Progress Overview
 
 | Week | Focus Area | Labs Completed | Status |
 |------|-----------|----------------|--------|
-| Week 1 | Fundamentals & Reconnaissance | 5/7 |  In Progress |
+| Week 1 | Fundamentals & Reconnaissance | 6/7 |  In Progress |
 | Week 2 | Threat Detection | 0/7 |  Pending |
 | Week 3 | Incident Response | 0/7 |  Pending |
 | Week 4 | Advanced Cases & Portfolio | 0/9 |  Pending |
 
-**Overall Progress:** 5/30 Labs (16.6%)
+**Overall Progress:** 7/30 Labs (22.6%)
 
 ---
 
@@ -83,7 +82,7 @@
 - MITRE ATT&CK framework
 
 
-### Day 3 - 18/01/25
+### Day 3 - 18 - 01- 2026
 
 **Lab:** 1.1.3 - Network Traffic Analysis with Wireshark  
 
@@ -137,7 +136,7 @@
 
 ---
 
-### Day 4 - 19-01-2025
+### Day 4 - 19-01-2026
 
 **Lab:** 1.1.4 - Malware Detection with VirusTotal  
 
@@ -179,7 +178,7 @@
 - Python automation
 - IOC extraction and documentation
 
-### Day 5 - 20-01-2025
+### Day 5 - 20-01-2026
 
 **Lab:** 1.1.5 - Phishing Email Analysis  
 **Status:**  Completed  
@@ -218,7 +217,7 @@
 - IOC extraction
 
 
-### Day 6 - [Tomorrow]
+### Day 6 - 21-01- 2026
 **Lab:** 1.1.6 - Web Application Attack Detection  
 **Status:**  Pending  
 **Planned Activities:**
