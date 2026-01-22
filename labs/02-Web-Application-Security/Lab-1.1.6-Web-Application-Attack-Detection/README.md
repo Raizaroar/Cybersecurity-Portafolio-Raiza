@@ -1,7 +1,7 @@
 # 1.1.6 - Web Application Attack Detection  
 
 
-**Date:** 21-01-2026 
+**Date:** 21-01-2026
 **Analyst:** Raiza  
 **Status:** Completed  
 **Category:** Web Application Security  
@@ -57,45 +57,15 @@ Successfully detected 11 web attack attempts across 4 attack vectors (SQL inject
    - Step 4: Manual Log Analysis with grep
    - Step 5: Python Automation Script
 
+## Injection & XSS Indicators
 
-## Attack Patterns Identified
+| Type            | Pattern                      | Purpose                  | Detection Criteria                  | Impact                                 |
+|-----------------|------------------------------|--------------------------|-------------------------------------|----------------------------------------|
+| **SQL Injection** | `' OR 1=1--`                 | Authentication bypass    | Single quotes + OR + comment (`--`) | Full database access                   |
+| **SQL Injection** | `' UNION SELECT '`           | Data exfiltration        | UNION + SELECT keywords             | Extract sensitive data                 |
+| **XSS**          | `<script>alert()</script>`   | JavaScript execution     | `<script>` tags                     | Session hijacking, credential theft   |
+| **XSS**          | `<img onerror=>`             | Event-handler XSS        | `onerror` / `onload` attributes     | Same as above, bypasses some filters  |
 
-### SQL Injection Indicators
-
-***Pattern: ' OR 1=1--***
-
-Purpose: Authentication bypass.
-
-Detection: Single quotes + OR + comment (--
-
-Impact: Full database access
-
-***Pattern: ' UNION SELECT '***
-
-Purpose: Data exfiltration
-
-Detection: UNION + SELECT keywords
-
-Impact: Extract sensitive data
-
-
-### XSS Indicators
-
-***Pattern: <script>alert()</script>***
-
-Purpose: JavaScript execution
-
-Detection: <script> tags
-
-Impact: Session hijacking, credential theft
-
-***Pattern: <img onerror=>***
-
-Purpose: Event-handler XSS
-
-Detection: onerror/onload attributes
-
-Impact: Same as above, bypasses some filters
 
 ---
 
@@ -121,3 +91,5 @@ Impact: Same as above, bypasses some filters
 2. **Pattern recognition:** Train eyes to spot anomalies
 3. **Tool creation:** Build scripts for repetitive tasks
 4. **Documentation:** Logs = evidence in incident response
+
+**Next Lab: Multi-stage attack investigation combining all Week 1 skills**
