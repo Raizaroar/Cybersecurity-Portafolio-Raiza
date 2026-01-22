@@ -280,3 +280,77 @@ Verdict: MALICIOUS
 - Credential harvesting page
 
 ## STEP 1.1.5.4: Analyze Sample #2 - Malicious Attachment
+
+[Click here! Invoice Sample ](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/blob/main/labs/07-Threat-Intelligence/Lab-1.1.5-Phishing-Analysis/samples-phishing/email-invoice.md)
+
+**Analysis Step:**
+
+1. **Initial Assessment:**
+
+***INTERESTING CASE:***
+
+- SPF: PASS
+- DKIM: PASS
+- DMARC: PASS
+- Professional language
+- No obvious typos
+
+**BUT:**
+
+***Attachment: INVOICE_2025-001.pdf.exe***
+   - Double extension (PDF + EXE)
+   - EXE = Windows executable
+   - Should be just .pdf
+
+**Verdict:** ***EMAIL COMPROMISED***
+
+- This is a spearphishing attack using a compromised legitimate account.
+
+2. **Attachment Analysis**
+
+- Hash the attachment
+
+sha256sum INVOICE_2025-001.pdf.exe
+
+```bash
+2bac000b735d090729159bca065fac43889a083cb7921a4300b12f5a3d1c588d  INVOICE_2025-001.pdf.exe
+```
+
+**VirusTotal Hash Check:**
+
+- Detection: 52/73 (71.2%)
+- Verdict: Trojan.GenericKD
+- Family: Banking Trojan
+
+**Behavior:**
+
+- Keylogger (captures passwords)
+- Connects to C2: 185.243.115.84
+- Steals browser credentials
+- Creates registry persistence
+
+## STEP 1.1.5.5: Common Phishing Techniques
+
+### Technique Taxonomy
+
+| #  | Technique              | Method / Target                          | Examples / Indicators                                                                 |
+|----|------------------------|------------------------------------------|---------------------------------------------------------------------------------------|
+| 1  | **Brand Impersonation** | Fake logos, similar domains              | microsoft-security.com vs microsoft.com <br> Targets: Microsoft, Google, Amazon, Banks |
+| 2  | **Typosquatting**       | Similar-looking domains                  | goog1e.com (1 instead of l) <br> micros0ft.com (0 instead of o) <br> paypa1.com        |
+| 3  | **Homograph Attacks (IDN)** | Unicode characters that look identical | apple.com vs аpple.com (Cyrillic 'а') <br> google.com vs gοοgle.com (Greek omicrons)   |
+| 4  | **Display Name Spoofing** | Fake "From" display name               | "Microsoft Security" <attacker@evil.com> (user sees only "Microsoft Security")         |
+| 5  | **Look-alike Characters** | Visually similar characters            | rn vs m → paypaI.com vs paypal.com <br> vv vs w → wvw.bank.com vs www.bank.com         |
+| 6  | **Subdomain Deception** | Legitimate brand in subdomain           | microsoft.com.malicious-site.com <br> paypal-secure.attacker.com                       |
+| 7  | **URL Shorteners**      | Hide real destination                   | bit.ly/xyz123 → unknown <br> tinyurl.com/abc → could be malicious                      |
+| 8  | **Urgency/Fear Tactics**| Psychological manipulation              | "Account will be closed" <br> "Suspicious activity detected" <br> "Urgent action required" <br> "Limited time offer" |
+| 9  | **Authority Impersonation** | Pretend to be trusted figures        | CEO (whaling) <br> IT Department <br> HR Department <br> Government agencies           |
+| 10 | **Attachment Types**    | Dangerous file extensions               | .exe, .scr, .bat, .cmd (executables) <br> .docm, .xlsm (macro docs) <br> .js, .vbs (scripts) <br> .zip, .rar (compressed malware) |
+
+## **STEP 1.1.5.6: Email Header Analysis with MXToolbox**
+
+1.  **Using MXToolbox Header Analyzer:**
+
+
+
+![1.1.5PishingAnalysis](/assets/screenshots/07-Threat-Intelligence/Lab-1.1.5-Phishing-Analysis/Lab-1.1.5-PhisingAnalysis7.png)
+
