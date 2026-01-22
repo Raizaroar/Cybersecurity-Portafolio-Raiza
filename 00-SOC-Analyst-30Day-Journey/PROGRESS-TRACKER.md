@@ -219,12 +219,41 @@
 
 ### Day 6 - 21-01- 2026
 **Lab:** 1.1.6 - Web Application Attack Detection  
-**Status:**  Pending  
-**Planned Activities:**
-- SQL injection detection in logs
-- XSS (Cross-Site Scripting) identification
-- CSRF attack recognition
-- Web server log analysis
+**Status:**  Completed  
+**Time Invested:** 4 hours  
+**Location:** `02-Web-Application-Security`
+
+**Key Learnings:**
+
+- Analyzed Apache web server logs for attack patterns
+- Detected 11 attacks: SQLi, XSS, path traversal, command injection, brute force
+- Used grep/awk/sed for log parsing and filtering
+- Created Python automation script (150+ lines, 100% detection rate)
+- Extracted IOCs from successful exploitation attempts
+- Mapped findings to MITRE ATT&CK (T1190, T1059.004, T1110.001)
+
+**Challenges:**
+
+**Challenge 1:** ***URL Encoding in Logs***
+**Issue:** Some attacks URL-encoded (< becomes %3C)  
+**Root Cause:** HTTP standard encoding  
+**Solution:** Added URL decode patterns to grep/Python  
+**Lesson:** Always check for encoded variants
+
+**Challenge 2:** ***Large Log Files***
+
+**Issue:** 10GB+ logs in production  
+**Root Cause:** High-traffic websites  
+**Solution:** Used grep before Python (pre-filtering)  
+**Lesson:** Multi-stage processing for efficiency
+
+**Skills Developed:**
+
+- OWASP Top 10 knowledge
+- Apache log analysis
+- grep/awk/Python for log parsing
+- Web attack pattern recognition
+- Python automation for security
 ---
 
 ##  Skills Development Tracker
