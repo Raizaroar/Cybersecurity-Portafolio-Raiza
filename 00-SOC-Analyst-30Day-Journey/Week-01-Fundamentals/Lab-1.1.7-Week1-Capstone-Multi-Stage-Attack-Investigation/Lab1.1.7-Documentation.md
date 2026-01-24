@@ -81,3 +81,17 @@ Conduct full investigation and provide:
 4. Remediation recommendations
 5. Executive summary
 
+## STEP 1.1.7.2: Evidence Collection
+
+Evidence Package Contents:
+
+***Create evidence folder***
+
+
+| # | Evidence Name                     | Link |
+|---|----------------------------------|------|
+| 1 | Phishing Email                   | [View Evidence 1](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/blob/main/00-SOC-Analyst-30Day-Journey/Week-01-Fundamentals/Lab-1.1.7-Week1-Capstone-Multi-Stage-Attack-Investigation/Evidence/Phishing-email.md) |
+| 2 | Malware Hash                     | [View Evidence 2](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/blob/main/00-SOC-Analyst-30Day-Journey/Week-01-Fundamentals/Lab-1.1.7-Week1-Capstone-Multi-Stage-Attack-Investigation/Evidence/Malware-Hash.md) |
+| 3 | Windows Event Logs               | [View Evidence 3](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/blob/main/00-SOC-Analyst-30Day-Journey/Week-01-Fundamentals/Lab-1.1.7-Week1-Capstone-Multi-Stage-Attack-Investigation/Evidence/Windows-Event-logs.md) |
+| 4 | Network Traffic (PCAP summary)  | [View Evidence 4](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/blob/main/00-SOC-Analyst-30Day-Journey/Week-01-Fundamentals/Lab-1.1.7-Week1-Capstone-Multi-Stage-Attack-Investigation/Evidence/Network-traffic-summary.md) |
+| 5 | Web Server Logs                 | [View Evidence 5](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/blob/main/00-SOC-Analyst-30Day-Journey/Week-01-Fundamentals/Lab-1.1.7-Week1-Capstone-Multi-Stage-Attack-Investigation/Evidence/Web-server-logs.md) |
