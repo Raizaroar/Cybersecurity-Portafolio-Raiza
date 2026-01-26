@@ -109,27 +109,51 @@ Questions to answer:
 3. Who sent it?
 4. What was the payload?
 
-aqui va el enlace
+[See Analysis Here](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/blob/main/00-SOC-Analyst-30Day-Journey/Week-01-Fundamentals/Lab-1.1.7-Week1-Capstone-Multi-Stage-Attack-Investigation/Analysis/PhishingEmail-Analysis.md)
 
 ## STEP 1.1.7.4: Investigation Phase 2 - Execution & Persistence
 
 ***Analyze Windows Event Logs:***
 
-aqui va el enlace
+[See Analysis Here](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/blob/main/00-SOC-Analyst-30Day-Journey/Week-01-Fundamentals/Lab-1.1.7-Week1-Capstone-Multi-Stage-Attack-Investigation/Analysis/MalwareExecution-Analysis.md)
 
 ## STEP 1.1.7.5: Investigation Phase 3 - Discovery & Lateral Movement
 
 ***Analyze Network Scanning:***
 
-aquiva el enlace
+[See Analysis Here](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/blob/main/00-SOC-Analyst-30Day-Journey/Week-01-Fundamentals/Lab-1.1.7-Week1-Capstone-Multi-Stage-Attack-Investigation/Analysis/NetworkScanning-Analysis.md)
 
 ## STEP 1.1.7.6: Investigation Phase 4 - Web Application Exploitation
 
 ***Analyze Web Server Logs:***
 
-aquiva elenc
+[See Analysis Here](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/blob/main/00-SOC-Analyst-30Day-Journey/Week-01-Fundamentals/Lab-1.1.7-Week1-Capstone-Multi-Stage-Attack-Investigation/Analysis/WebServerLogs-Analysis.md)
 
 ## STEP 1.1.7.7: Investigation Phase 5 - Data Exfiltration
 
 ***Analyze Database Access & Exfiltration:***
+
+[See Analysis Here](https://github.com/Raizaroar/Cybersecurity-Portafolio-Raiza/blob/main/00-SOC-Analyst-30Day-Journey/Week-01-Fundamentals/Lab-1.1.7-Week1-Capstone-Multi-Stage-Attack-Investigation/Analysis/DataExfiltration.md)
+
+## STEP 1.1.7.8: Create Complete Attack Timeline
+
+**COMPLETE ATTACK TIMELINE - INC-2025-001**
+
+ **Kill Chain Phases**
+
+aqui va enlace
+
+## STEP 1.1.7.9: Extract Complete IOC List
+
+INDICATORS OF COMPROMISE - INC-2025-001
+
+**Incident:** SecureCorp Data Breach
+
+**Date:** January 22, 2025
+
+**Analyst:** Raiza
+
+**Confidence:** HIGH
+
+auivaelenlace
 
