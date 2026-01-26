@@ -4,7 +4,7 @@
 
 - **Target Completion:** pending  
 
-- **Current Status:** Day 8 - Web Application Attack Detection  
+- **Current Status:** Day 8 - LAB 2.1.1: SPLUNK SIEM - INSTALLATION & BASICS
 ---
 
 ##  Progress Overview
@@ -16,7 +16,7 @@
 | Week 3 | Incident Response | 0/7 |  Pending |
 | Week 4 | Advanced Cases & Portfolio | 0/9 |  Pending |
 
-**Overall Progress:** 7/30 Labs (22.6%)
+**Overall Progress:** 8/30 Labs (26.6%)
 
 ---
 
@@ -235,6 +235,7 @@
 **Challenges:**
 
 **Challenge 1:** ***URL Encoding in Logs***
+
 **Issue:** Some attacks URL-encoded (< becomes %3C)  
 **Root Cause:** HTTP standard encoding  
 **Solution:** Added URL decode patterns to grep/Python  
@@ -285,8 +286,43 @@
 - Executive summary
 - IOC list
 
+### Day 8 - 23-01-2026
+**Lab:** 2.1.1 - Splunk SIEM Fundamentals  
+**Status:** Completed  
+**Time Invested:** 6 hours 
 
+**Location:** `04-SIEM-Projects/Lab-2.1.1-Splunk-Basics/`
 
+**Key Learnings:**
+- Installed Splunk Enterprise (9.x) with 60-day trial
+- Indexed 3 data sources (Windows, web, firewall logs - 40 events total)
+- Mastered SPL basics (10+ searches created)
+- Created 7 detection use cases (60% MITRE coverage)
+- Configured 3 real-time alerts (brute force, SQLi, C2)
+- Built SOC dashboard with 5 visualization panels
+- Documented professional detection engineering
+
+**Challenges**
+
+**Challenge 1:** ***Time Zone Parsing***
+
+**Issue:** Timestamps not parsing correctly  
+**Resolution:** Adjusted time settings in source type configuration  
+**Lesson:** Always verify timestamp extraction
+
+ **Challenge 2:** ***Dashboard Not Updating***
+
+**Issue:** Real-time panels showed stale data  
+**Resolution:** Changed search mode from "Fast" to "Smart"  
+**Lesson:** Fast mode trades accuracy for speed
+
+**Skills Developed:**
+
+- SIEM operations
+- SPL query language
+- Detection engineering
+- Alert configuration
+- Dashboard creation
 
 ##  Skills Development Tracker
 
@@ -327,7 +363,7 @@
 ##  Achievements Unlocked
 
 - [/\] Day 1: Environment configured like a professional SOC
-- [ ] Day 7: First week milestone - Fundamentals mastered
+- [/\] Day 7: First week milestone - Fundamentals mastered
 - [ ] Day 14: Mid-point - Detection capabilities demonstrated
 - [ ] Day 21: Week 3 - Incident response skills proven
 - [ ] Day 30: COMPLETE - Ready for SOC Analyst roles
