@@ -211,3 +211,23 @@ index="windows_security" EventCode=4625
 - **What it does:** Find users with 3+ failed logins  
 
 - **Use case:** Automated brute force detection
+
+## STEP 2.1.1.7: Save Searches as Alerts
+
+Let's create an alert for brute force detection.
+
+```spl
+index="windows_security" EventCode=4625
+| stats count by User
+| where count > 3
+```
+
+![Lab2.1.1-Splunk](/assets/screenshots/04-SIEM-Projects/Lab2.1.1-Splunk-Basics/Lab2.1.1-Splunk11.png)
+
+## STEP 2.1.1.8: Create Dashboard
+
+
+
+
+![Lab2.1.1-Splunk](/assets/screenshots/04-SIEM-Projects/Lab2.1.1-Splunk-Basics/Lab2.1.1-Splunk12.png)
+
