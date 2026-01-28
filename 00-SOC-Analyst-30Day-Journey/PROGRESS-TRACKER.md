@@ -4,7 +4,7 @@
 
 - **Target Completion:** pending  
 
-- **Current Status:** Day 8 - LAB 2.1.1: SPLUNK SIEM - INSTALLATION & BASICS
+- **Current Status:**  Day 9 - Lab 2.1.2 - Advanced Splunk & Threat Hunting  
 ---
 
 ##  Progress Overview
@@ -291,10 +291,11 @@
 **Status:** Completed  
 **Time Invested:** 6 hours 
 
-**Location:** `04-SIEM-Projects/Lab-2.1.1-Splunk-Basics/`
+**Location:** `04-SIEM-Projects/Lab-2.1.1-Splunk-Basics/` [![Abrir Proyecto](https://img.shields.io/badge/GitHub-Proyecto-blue?logo=github)](https://github.com/Raizaroar/Cybersecurity-Portfolio-Raiza/tree/main/labs/04-SIEM-Projects/Lab-2.1.1-Splunk-Basics)
+
 
 **Key Learnings:**
-- Installed Splunk Enterprise (9.x) with 60-day trial
+- Installed Splunk Enterprise (10.2.0) with 60-day trial
 - Indexed 3 data sources (Windows, web, firewall logs - 40 events total)
 - Mastered SPL basics (10+ searches created)
 - Created 7 detection use cases (60% MITRE coverage)
@@ -323,6 +324,38 @@
 - Detection engineering
 - Alert configuration
 - Dashboard creation
+
+### Day 9 - 24-01-2026
+
+**Lab:** 2.1.2 - Advanced Splunk & Threat Hunting  
+**Status:** Completed  
+**Time Invested:** 5 hours
+**Location:** `04-SIEM-Projects/Lab-2.1.2-Advanced-Splunk/` [![Abrir Proyecto](https://img.shields.io/badge/GitHub-Proyecto-blue?logo=github)](https://github.com/Raizaroar/Cybersecurity-Portfolio-Raiza/tree/main/labs/04-SIEM-Projects/Lab-2.1.2-Advanced-Splunk)
+
+**Key Learnings:**
+- Mastered 5 advanced SPL techniques (regex, eval, macros, transactions, subsearches)
+- Created 3 multi-log correlation detections
+- Implemented 2 Sigma rules with SPL conversion
+- Conducted hypothesis-driven threat hunt (5 hypotheses)
+- Detected 1 real malicious macro attack
+- Built threat hunting dashboard (5 panels)
+- Created detection engineering playbook
+
+**Advanced SPL:**
+- regex to pattern extraction
+- eval to field calculations, case statements
+- macros to reusable search fragments
+- transaction to event grouping
+- advanced subsearches and joins
+
+**Skills Developed:**
+- Advanced SIEM operations
+- Detection engineering
+- Threat hunting methodology
+- Sigma rule implementation
+- Professional hunt documentation
+
+
 
 ##  Skills Development Tracker
 
